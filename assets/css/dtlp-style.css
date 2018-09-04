@@ -1,0 +1,148 @@
+/*----- Tabs -----*/
+.tabs {
+	width:100%;
+    display:inline-block;
+    margin-right: 150px;
+    margin-left: 80px;
+}
+
+/*----- Tab Links -----*/
+/* Clearfix */
+	.tab-links:after {
+	display:block;
+	clear:both;
+	content:'';
+}
+
+.tab-links li {
+	margin:0px 5px;
+	float:left;
+	list-style:none;
+}
+
+.tab-links a {
+	padding:9px 15px;
+	display:inline-block;
+	border-radius:3px 3px 0px 0px;
+	background:#7FB5DA;
+	font-size:16px;
+	font-weight:600;
+	color:#4c4c4c;
+	transition:all linear 0.15s;
+}
+
+.tab-links a:hover {
+	background:#a7cce5;
+	text-decoration:none;
+}
+
+li.active a, li.active a:hover {
+	background:#fff;
+	color:#4c4c4c;
+}
+
+/*----- Content of Tabs -----*/
+.tab-content {
+	padding:15px;
+	border-radius:20px;
+	box-shadow:-1px 1px 1px rgba(0,0,0,0.15);
+    background:#fff;
+    margin-right: 150px;
+}
+
+.tab {
+	display:none;
+}
+
+.tab.active {
+	display:block;
+}
+
+a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+    
+}
+a:after {
+	display:block;
+	clear:both;
+	content:'';
+}
+
+a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.previous {
+    background-color: #f1f1f1;
+    color: black;
+}
+
+.next {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.round {
+    border-radius: 50%;
+}
+/* Radio Button CSS*/
+label {
+    display: inline;
+}
+.radio-1 {
+    width: 193px;
+}
+.button-holder {
+    float: left;
+    margin-left: 6px;
+    margin-top: 16px;
+}
+.regular-radio {
+    display: none;
+}
+.regular-radio + label {
+    background-color: #fafafa;
+    border: 2px solid #cacece;
+    border-radius: 50px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), 0 -15px 10px -12px rgba(0, 0, 0, 0.05) inset;
+    display: inline-block;
+    padding: 11px;
+    position: relative;
+
+}
+.regular-radio:checked + label:after {
+    background: none repeat scroll 0 0 #94E325;
+    border-radius: 50px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3) inset;
+    content: " ";
+    font-size: 36px;
+    height: 8px;
+    left: 7px;
+    position: absolute;
+    top: 7px;
+    width: 8px;
+}
+.regular-radio:checked + label {
+    background-color: #e9ecee;
+    border: 2px solid #adb8c0;
+    color: #99a1a7;
+    padding: 11px;
+}
+.regular-radio + label:active, .regular-radio:checked + label:active {
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1) inset;
+}
+.regular-radio + label:before {
+  background: none repeat scroll 0 0 #FDFDFD;
+  border-radius: 50px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3) inset;
+  content: " ";
+  font-size: 36px;
+  height: 8px;
+  left: 7px;
+  position: absolute;
+  top: 7px;
+  width: 8px;
+}

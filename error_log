@@ -1,0 +1,10 @@
+[02-Sep-2018 14:55:28 UTC] PHP Parse error:  syntax error, unexpected 'http' (T_STRING) in /home/egovmatu/public_html/application/config/config.php on line 26
+[02-Sep-2018 14:55:28 UTC] PHP Fatal error:  Exception thrown without a stack frame in Unknown on line 0
+[02-Sep-2018 14:56:24 UTC] PHP Parse error:  syntax error, unexpected 'https' (T_STRING) in /home/egovmatu/public_html/application/config/config.php on line 26
+[02-Sep-2018 14:56:24 UTC] PHP Fatal error:  Exception thrown without a stack frame in Unknown on line 0
+[02-Sep-2018 14:56:59 UTC] PHP Parse error:  syntax error, unexpected 'http' (T_STRING) in /home/egovmatu/public_html/application/config/config.php on line 26
+[02-Sep-2018 14:56:59 UTC] PHP Fatal error:  Exception thrown without a stack frame in Unknown on line 0
+[02-Sep-2018 14:57:03 UTC] PHP Parse error:  syntax error, unexpected 'http' (T_STRING) in /home/egovmatu/public_html/application/config/config.php on line 26
+[02-Sep-2018 14:57:03 UTC] PHP Fatal error:  Exception thrown without a stack frame in Unknown on line 0
+[02-Sep-2018 14:57:18 UTC] PHP Parse error:  syntax error, unexpected 'https' (T_STRING) in /home/egovmatu/public_html/application/config/config.php on line 26
+[02-Sep-2018 14:57:18 UTC] PHP Fatal error:  Exception thrown without a stack frame in Unknown on line 0
