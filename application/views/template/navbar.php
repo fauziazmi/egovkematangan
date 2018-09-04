@@ -37,7 +37,7 @@ $ses_level = $this->session->userdata('ses_pekerjaan');
                 </li>
                 <?php } ?>
                 <?php if ($ses_level == 'Pemda'){?><li>
-                    <a href="<?php echo site_url('user');?>" class="w3-bar-item w3-button"> Data User</a>
+                    <a href="<?php echo site_url('user/detail_data/'.$this->session->userdata('ses_id'));?>" class="w3-bar-item w3-button"> Data User</a>
                 </li>
                 <?php } ?>
                 <?php if ($ses_level == 'Pemda'){?>

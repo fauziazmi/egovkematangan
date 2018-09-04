@@ -78,6 +78,10 @@ function drawVisualization() {
     region: 'ID',
     displayMode: 'regions',
     resolution: 'provinces',
+    colorAxis: {colors: ['#e31b23', 'black', '#00853f']},
+          backgroundColor: '#81d4fa',
+          datalessRegionColor: '#f8bbd0',
+          defaultColor: '#f5f5f5',
   };
   var geochart = new google.visualization.GeoChart(
     document.getElementById('visualization'));

@@ -50,8 +50,9 @@ class User extends CI_Controller {
         $data_user = $this->model->GetUser("where id_user = '$kode'")->result_array();
         $data = array(
             'id_user' => $data_user[0]['id_user'],
-            'nama_user' => $data_user[0]['nama_user'],
-            'level' => $data_user[0]['level'],
+            'wilayah' => $data_user[0]['wilayah'],
+            'pekerjaan' => $data_user[0]['pekerjaan'],
+            'username' => $data_user[0]['username'],
             'email' => $data_user[0]['email'],
             'foto' => $data_user[0]['foto'],
             'last_login' => $data_user[0]['last_login'],
@@ -223,10 +224,24 @@ class User extends CI_Controller {
             $data = array('password' => md5($ulangi_password_baru));
             $this->model->Update('user',$data,array('id_user' => $id_user,));
             $this->session->set_flashdata('sukses','Ganti password berhasil dilakukan');
-            redirect('user');
+            $data_user = $this->model->GetUser("where id_user = '$id_user'")->row_array();
+                $data = array(
+                    'content' => 'template/ganti-password',
+                    'password' => $data_user['password'],
+                    'id_user' => $data_user['id_user'],
+                );
+            $this->load->view('template/site', $data);
+            //redirect('user');
         }else{
             $this->session->set_flashdata('error','Ganti password gagal dilakukan');
-            redirect('user');
+            $data_user = $this->model->GetUser("where id_user = '$id_user'")->row_array();
+                $data = array(
+                    'content' => 'template/ganti-password',
+                    'password' => $data_user['password'],
+                    'id_user' => $data_user['id_user'],
+                );
+            $this->load->view('template/site', $data);
+            //redirect('user');
         }
     }
 

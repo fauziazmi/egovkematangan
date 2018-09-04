@@ -255,20 +255,21 @@ class Dtlp extends CI_Controller{
         $this->load->view('dtlp/dtlp-report-excel',$data);
     }
 
-    public function kirim_email($wilayah = 1)
+    public function kirim_email($id = 1)
     {
         $this->cek_user();
         if ($this->uri->segment(3) == null){
             $this->session->set_flashdata('warning','Anda belum memilih data untuk melihat detail data');
             redirect('dtlp');
         }
-        $data_laporan = $this->model->GetDtlp("where wilayah = '$wilayah'")->row_array();
+        $data_laporan = $this->model->GetDtlp("where id = '$id'")->row_array();
         $data = array(
             'wilayah' => $data_laporan['wilayah'],
             'jawaban_1' => $data_laporan['jawaban_1'],
             'jawaban_2' => $data_laporan['jawaban_2'],
             'jawaban_3' => $data_laporan['jawaban_3'],
             'jawaban_4' => $data_laporan['jawaban_4'],
+            'pdf' => $data_laporan['pdf'],
             'content' => 'dtlp/dtlp-revisi',
             'lokasi' => 'Kirim Email',
             );

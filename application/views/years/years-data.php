@@ -46,7 +46,7 @@
                             <td><a href="<?php echo base_url('assets/pdf/'.$data['wilayah'].'/'.$data['pdf'])?>" data-toggle="tooltip" data-placement ="top" title="lihat pdf" target="_blank"><span class="fa fa-file-pdf-o" style="font-size: 14pt;"> </span></a></td>
                                 <td class="text-center">
                                     <?php if ($ses_level != 'Pemda'){?>
-                                    <a href="<?php echo base_url()?>dtlp/kirim_email/<?php echo $data['wilayah'];?>" data-toggle="tooltip" data-placement ="top" title="Komentar" target="_blank"><span class="fa fa-commenting-o" style="font-size: 14pt;"> </span></a>                                 
+                                    <a href="<?php echo base_url()?>dtlp/kirim_email/<?php echo $data['id'];?>" data-toggle="tooltip" data-placement ="top" title="Komentar" target="_blank"><span class="fa fa-commenting-o" style="font-size: 14pt;"> </span></a>                                 
                                     <a href="<?php echo base_url()?>dtlp/detail_data/<?php echo $data['id'];?>" data-toggle="tooltip" data-placement ="top" title="detail"><span class="glyphicon glyphicon-check" style="font-size: 14pt"></span></a>
                                     <a href="<?php echo base_url()?>dtlp/export_excel/<?php echo $data['wilayah'];?>" data-toggle="tooltip" data-placement ="top" title="excel"><span class="fa fa-file-excel-o" style="font-size: 14pt"></span></a>
                                     <a href="<?php echo base_url()?>dtlp/hapus_data/<?php echo $data['wilayah'];?>" onclick="return confirm('Yakin data dihapus')" data-toggle="tooltip" data-placement ="top" title="hapus"><span class="glyphicon glyphicon-trash" style="font-size: 12pt"></span></a>

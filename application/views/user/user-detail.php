@@ -17,14 +17,19 @@
                     <div class="table-responsive">
                         <table class="table">
                             <tr>
-                                <th width="25%">NAMA USER</th>
+                                <th width="25%">USERNAME</th>
                                 <td width="3%">:</td>
-                                <td><?php echo $nama_user;?></td>
+                                <td><?php echo $username;?></td>
                             </tr>
                             <tr>
-                                <th>LEVEL</th>
+                                <th width="25%">WILAYAH</th>
+                                <td width="3%">:</td>
+                                <td><?php echo $wilayah;?></td>
+                            </tr>
+                            <tr>
+                                <th>PEKERJAAN</th>
                                 <td>:</td>
-                                <td><?php echo $level;?></td>
+                                <td><?php echo $pekerjaan;?></td>
                             </tr>
                             <tr>
                                 <th>EMAIL</th>
