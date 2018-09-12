@@ -68,7 +68,10 @@ class Login extends CI_Controller {
             redirect('login');
         }
         $username = $this->input->post('username');
+        $wilayah = $this->input->post('wilayah');
+        $pekerjaan = $this->input->post('pekerjaan');
         $cek_username = $this->model->GetUser("where username = '$username'")->num_rows();
+        if($pekerjaan == 'Assessor') $wilayah = $username;
         if ($cek_username > 0){
             $this->session->set_flashdata('warning','Username sudah ada');
             redirect('login');
@@ -83,14 +86,21 @@ class Login extends CI_Controller {
             $this->upload->do_upload('file_upload');
             $upload_data = $this->upload->data();
             $data = array(
-                'wilayah' => $this->input->post('wilayah'),
-                'pekerjaan' => $this->input->post('pekerjaan'),
+                'wilayah' => $wilayah,
+                'pekerjaan' => $pekerjaan,
                 'email' => $this->input->post('email'),
                 'username' => $username,
                 'password' => md5($this->input->post('password')),
                 'foto' => $upload_data['file_name'],
             );
             $result = $this->model->Simpan('user',$data);
+            if($pekerjaan == 'Pemda') {
+                $data_notif = array(
+                        'wilayah' => $wilayah,
+                        'state' => 0
+                );
+            $result_notif = $this->model->Simpan('notifikasi',$data_notif);
+            }
             if ($result == 1){
                 $this->session->set_flashdata('sukses','Daftar berhasil dilakukan');
                 redirect('login');

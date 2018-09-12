@@ -7,6 +7,11 @@ class Model extends CI_Model{
         return $this->db->query('select * from laporan '.$where);
     }
 
+    public function GetNotifikasi($where = ''){
+        $data = $this->db->query('select state from notifikasi '.$where);
+        return $data;
+    }
+
     public function GetTotDtlp($where = ''){
         return $this->db->query('select *, pendanaan.pendanaan_name, years.years_name from laporan LEFT JOIN pendanaan 
                   ON laporan.pendanaan = pendanaan.code_pendanaan LEFT JOIN years ON laporan.tahun_penelitian = years.code_years '.$where);
@@ -17,6 +22,7 @@ class Model extends CI_Model{
         $data = $this->db->query('select * from years '.$where);
         return $data;
     }
+    
     public function GetPendanaan($where = ''){
         $data = $this->db->query('select * from pendanaan '.$where);
         return $data;
@@ -24,6 +30,10 @@ class Model extends CI_Model{
 
     public function GetUser($where = ''){
         return $this->db->query('select * from user '.$where);
+    }
+
+    public function GetPenilaian($where = ''){
+        return $this->db->query('select * from penilaian '.$where);
     }
 
     public function LikeDtlp($jawaban_1,$jawaban_2,$jawaban_3,$jawaban_4){

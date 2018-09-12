@@ -1,6 +1,15 @@
 <html>
 <head>
     <?php $this->load->view('template/header');?>
+    <script type="text/javascript"> 
+    		$('#job').on('change', function(){
+    if($(this).val() =='Assessor'){
+        $('#region').attr('disabled', 'disabled');
+    }else{
+        $('#region').attr('disabled', false);
+    }
+});
+</script>
 </head>
 <body>
 <div class="container" style="margin: auto auto;">
@@ -78,49 +87,49 @@
                 <div class="modal-body">
                     <div class="form-group">
                             <label>Tugas Anda</label>
-                            <select name="pekerjaan" class="form-control">
-                                <option value="Pemda">Pemda</option>
-                                <option value="Assesor">Assesor</option>
+                            <select id='job' name="pekerjaan" class="form-control">
+                                <option value="Assessor">Assessor</option>
+                                <option value="Pemda" selected="selected">Pemda</option>
                             </select>
                     </div>
                     <div class="form-group">
                         <label>Wilayah</label>
-                        <select name="wilayah" class="form-control">
-                        <option value="Aceh">Aceh</option>
-                        <option value="Bali">Bali</option>
-                        <option value="Banten">Banten</option>
-                        <option value="Bengkulu">Bengkulu</option>
-                        <option value="Gorontalo">Gorontalo</option>
-                        <option value="Jakarta">Jakarta</option>
-                        <option value="Jambi">Jambi</option>
-                        <option value="Jawa Barat">Jawa Barat</option>
-                        <option value="Jawa Tengah">Jawa Tengah</option>
-                        <option value="Jawa Timur">Jawa Timur</option>
-                        <option value="Kalimantan Barat">Kalimantan Barat</option>
-                        <option value="Kalimantan Selatan">Kalimantan Selatan</option>
-                        <option value="Kalimantan Tengah">Kalimantan Tengah</option>
-                        <option value="Kalimantan Timur">Kalimantan Timur</option>
-                        <option value="Kalimantan Utara">Kalimantan Utara</option>
-                        <option value="Kepulauan Bangka Belitung">Kepulauan Bangka Belitung</option>
-                        <option value="Kepulauan Riau">Kepulauan Riau</option>
-                        <option value="Lampung">Lampung</option>
-                        <option value="Maluku">Maluku</option>
-                        <option value="Maluku Utara">Maluku Utara</option>
-                        <option value="Nusa Tenggara Barat">Nusa Tenggara Barat</option>
-                        <option value="Nusa Tenggara Timur">Nusa Tenggara Timur</option>
-                        <option value="Papua">Papua</option>
-                        <option value="Papua Barat">Papua Barat</option>
-                        <option value="Riau">Riau</option>
-                        <option value="Sulawesi Barat">Sulawesi Barat</option>
-                        <option value="Sulawesi Selatan">Sulawesi Selatan</option>
-                        <option value="Sulawesi Tengah">Sulawesi Tengah</option>
-                        <option value="Sulawesi Tenggara">Sulawesi Tenggara</option>
-                        <option value="Sulawesi Utara">Sulawesi Utara</option>
-                        <option value="Sumatera Barat">Sumatera Barat</option>
-                        <option value="Sumatera Selatan">Sumatera Selatan</option>
-                        <option value="Sumatera Utara">Sumatera Utara</option>
-                        <option value="Yogyakarta">Yogyakarta</option>
-                            </select>
+                        <select id='region' name="wilayah" class="form-control">
+                                <option value="Aceh">Aceh</option>
+                                <option value="Bali">Bali</option>
+                                <option value="Banten">Banten</option>
+                                <option value="Bengkulu">Bengkulu</option>
+                                <option value="Gorontalo">Gorontalo</option>
+                                <option value="Jakarta">Jakarta</option>
+                                <option value="Jambi">Jambi</option>
+                                <option value="Jawa Barat">Jawa Barat</option>
+                                <option value="Jawa Tengah">Jawa Tengah</option>
+                                <option value="Jawa Timur">Jawa Timur</option>
+                                <option value="Kalimantan Barat">Kalimantan Barat</option>
+                                <option value="Kalimantan Selatan">Kalimantan Selatan</option>
+                                <option value="Kalimantan Tengah">Kalimantan Tengah</option>
+                                <option value="Kalimantan Timur">Kalimantan Timur</option>
+                                <option value="Kalimantan Utara">Kalimantan Utara</option>
+                                <option value="Kepulauan Bangka Belitung">Kepulauan Bangka Belitung</option>
+                                <option value="Kepulauan Riau">Kepulauan Riau</option>
+                                <option value="Lampung">Lampung</option>
+                                <option value="Maluku">Maluku</option>
+                                <option value="Maluku Utara">Maluku Utara</option>
+                                <option value="Nusa Tenggara Barat">Nusa Tenggara Barat</option>
+                                <option value="Nusa Tenggara Timur">Nusa Tenggara Timur</option>
+                                <option value="Papua">Papua</option>
+                                <option value="Papua Barat">Papua Barat</option>
+                                <option value="Riau">Riau</option>
+                                <option value="Sulawesi Barat">Sulawesi Barat</option>
+                                <option value="Sulawesi Selatan">Sulawesi Selatan</option>
+                                <option value="Sulawesi Tengah">Sulawesi Tengah</option>
+                                <option value="Sulawesi Tenggara">Sulawesi Tenggara</option>
+                                <option value="Sulawesi Utara">Sulawesi Utara</option>
+                                <option value="Sumatera Barat">Sumatera Barat</option>
+                                <option value="Sumatera Selatan">Sumatera Selatan</option>
+                                <option value="Sumatera Utara">Sumatera Utara</option>
+                                <option value="Yogyakarta">Yogyakarta</option>
+                        </select>
                     </div>
                     <div class="form-group">
                         <label>Email</label>

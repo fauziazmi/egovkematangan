@@ -33,17 +33,17 @@ Kegiatan yang dibuka Asisten Bidang Pemerintahan Sekda Provinsi Papua Doren Wake
                 <div class="panel-heading">
                     <div class="row">
                         <div class="col-xs-4">
-                            <i class="fa fa-suitcase fa-5x"></i>
+                            <i class="fa fa-bell fa-5x"></i>
                         </div>
                         <div class="col-xs-8 text-right">
-                            <div class="huge"><?php echo $total_pendanaan;?></div>
-                            <div> Notifikasi</div>
+                            <div class="huge"><?php echo $total_penilaian;?></div>
+                            <div> Feedback</div>
                         </div>
                     </div>
                 </div>
                 <a href="#">
                     <div class="panel-footer">
-                        <span class="pull-left">View Details</span>
+                        <a href="<?php echo site_url('feedback');?>" class="pull-left">View Details</a>
                         <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                         <div class="clearfix"></div>
                     </div>

@@ -19,7 +19,7 @@ class Dtlp extends CI_Controller{
     }
 
     public function cek_user(){
-        if ($this->session->userdata('ses_level') == 'Pengunjung' or $this->session->userdata('ses_level') == 'Pimpinan'){
+        if ($this->session->userdata('ses_level') == 'Pemda' or $this->session->userdata('ses_level') == 'Pimpinan'){
             $this->session->set_flashdata('error','Maaf anda tidak bisa masuk kehalaman tersebut');
             redirect('dtlp');
         }
@@ -52,20 +52,34 @@ class Dtlp extends CI_Controller{
         }
         $wilayah = $this->input->post('wilayah');
         //$tahun_penelitian = $this->input->post('tahun_penelitian');
-        $cek_kode = $this->model->GetDtlp("where wilayah = '$wilayah'")->num_rows();
+        //$cek_kode = $this->model->GetNotifikasi("where wilayah = '$wilayah'")->num_rows();
+        $cek_kode = $this->model->GetNotifikasi("where wilayah = '$wilayah'");
         //$data_years = $this->model->GetYears("where code_years = '$tahun_penelitian'")->row_array();
-        if ($cek_kode > 0){
+        if ($cek_kode == '1'){
             $this->session->set_flashdata('warning', 'Data sudah ada');
             redirect('dtlp');
         }else {
             $config = array(
                 'upload_path' => './assets/pdf/'.$wilayah,
-                'allowed_types' => 'pdf',
+                'allowed_types' => 'gif|jpg|JPG|png|JPEG|pdf|doc',
                 'max_size' => '1000000',
             );
             $this->load->library('upload', $config);
             $this->upload->do_upload('pdf_1');
             $upload_data = $this->upload->data();
+            $pdf_1= $upload_data['file_name'];
+
+            $this->upload->do_upload('pdf_2');
+            $upload_data = $this->upload->data();
+            $pdf_2= $upload_data['file_name'];
+
+            $this->upload->do_upload('pdf_3');
+            $upload_data = $this->upload->data();
+            $pdf_3= $upload_data['file_name'];
+
+            $this->upload->do_upload('pdf_4');
+            $upload_data = $this->upload->data();
+            $pdf_4= $upload_data['file_name'];
 
             $jawaban_1 = $this->input->post('jawaban_1');
             $jawaban_2 = $this->input->post('jawaban_2');
@@ -86,9 +100,17 @@ class Dtlp extends CI_Controller{
                 'nilai' => $nilai,
                 'wilayah' => $this->input->post('wilayah'),
                 'tgl_terima' => $this->input->post('tgl_terima'),
-                'pdf' => $upload_data['file_name'],
+                'pdf_1' => $pdf_1,
+                'pdf_2' => $pdf_2,
+                'pdf_3' => $pdf_3,
+                'pdf_4' => $pdf_4,
+                'aktif' => '1'
             );
             $this->model->Simpan('laporan', $data);
+            $data_notifikasi = array(
+                'state' => 1
+            );
+            $this->model->Update('notifikasi', $data_notifikasi, array('wilayah' => $wilayah));
             $this->session->set_flashdata('sukses', 'Simpan data berhasil dilakukan');
             redirect('dtlp');
         }
@@ -185,25 +207,31 @@ class Dtlp extends CI_Controller{
         }
     }
 
-    public function hapus_data($kode = 1){
+    public function hapus_data($id = 1){
         $this->cek_user();
         if ($this->uri->segment(3) == null){
             $this->session->set_flashdata('warning','Hapus data belum dilakukan');
             redirect('dtlp');
         }
-        $data_laporan = $this->model->GetTotDtlp("where kode_penelitian = '$kode'")->row_array();
-        $result = $this->model->Hapus('laporan',array('kode_penelitian' => $kode));
-        $years = $data_laporan['years_name'];
-        $pdf = $data_laporan['pdf'];
+        $data_laporan = $this->model->GetDtlp("where id = '$id'")->row_array();
+        $result = $this->model->Hapus('laporan',array('id' => $id));
+        $wilayah = $data_laporan['wilayah'];
+        $pdf_1 = $data_laporan['pdf_1'];
+        $pdf_2 = $data_laporan['pdf_2'];
+        $pdf_3 = $data_laporan['pdf_3'];
+        $pdf_4 = $data_laporan['pdf_4'];
         if ($result == 1){
-            if ($years != null){
-                unlink('./assets/pdf/'.$years.'/'.$pdf);
+            if ($wilayah != null){
+                unlink('./assets/pdf/'.$wilayah.'/'.$pdf_1);
+                unlink('./assets/pdf/'.$wilayah.'/'.$pdf_2);
+                unlink('./assets/pdf/'.$wilayah.'/'.$pdf_3);
+                unlink('./assets/pdf/'.$wilayah.'/'.$pdf_4);
             }
             $this->session->set_flashdata('sukses','Hapus data berhasil dilakukan');
-            redirect('dtlp');
+            redirect('years');
         }else{
             $this->session->set_flashdata('error','Hapus data gagal dilakukan');
-            redirect('dtlp');
+            redirect('years');
         }
 
     }
@@ -223,7 +251,10 @@ class Dtlp extends CI_Controller{
             'jawaban_4' => $data_laporan['jawaban_4'],
             'nilai' => $data_laporan['Nilai'],
             'tgl_terima' => $data_laporan['tgl_terima'],
-            'pdf' => $data_laporan['pdf'],
+            'pdf_1' => $data_laporan['pdf_1'],
+            'pdf_2' => $data_laporan['pdf_2'],
+            'pdf_3' => $data_laporan['pdf_3'],
+            'pdf_4' => $data_laporan['pdf_4'],
             'content' => 'dtlp/dtlp-detail',
         );
         $this->load->view('template/site',$data);
@@ -269,7 +300,10 @@ class Dtlp extends CI_Controller{
             'jawaban_2' => $data_laporan['jawaban_2'],
             'jawaban_3' => $data_laporan['jawaban_3'],
             'jawaban_4' => $data_laporan['jawaban_4'],
-            'pdf' => $data_laporan['pdf'],
+            'pdf_1' => $data_laporan['pdf_1'],
+            'pdf_2' => $data_laporan['pdf_2'],
+            'pdf_3' => $data_laporan['pdf_3'],
+            'pdf_4' => $data_laporan['pdf_4'],
             'content' => 'dtlp/dtlp-revisi',
             'lokasi' => 'Kirim Email',
             );
@@ -278,42 +312,37 @@ class Dtlp extends CI_Controller{
 
     public function aksi_kirim()
     {
-        $email = 'boykurniawan123@gmail.com';
-        $subjek = $this->input->post('judul');
-        $pesan = $this->input->post('isi');
-
-        $query = $this->db->get('email');
-        foreach ($query->result() as $row) {
-
-             $config = Array(
-                  'protocol' => 'smtp',
-                  'smtp_host' => 'ssl://smtp.googlemail.com',
-                  'smtp_port' => 465,
-                  'smtp_user' => 'fauzaze@gmail.com', //isi dengan gmailmu!
-                  'smtp_pass' => '28059428', //isi dengan password gmailmu!
-                  'mailtype' => 'html',
-                  'charset' => 'iso-8859-1',
-                  'wordwrap' => TRUE
-                );
-            $this->load->library('email', $config);
-            $this->email->set_newline("\r\n");
-            $this->email->from($email);
-            $this->email->to($row->email); //email tujuan. Isikan dengan emailmu!
-            $this->email->subject($subjek);
-            $this->email->message($pesan);
-            if($this->email->send())
-            {
-              //echo 'Email sent.';
-                ?>
-                <script type="text/javascript">
-                    alert('Berhasil mengirim email !');
-                    window.location='<?php echo base_url()?>email/kirim_email';
-                </script>
-                <?php
-            } else {
-              show_error($this->email->print_debugger());
-            }
-        }
+        $wilayah = $this->input->post('wilayah');
+        //$tahun_penelitian = $this->input->post('tahun_penelitian');
+       /* $cek_kode = $this->model->GetPenilaian("where wilayah = '$wilayah'")->num_rows();
+        //$data_years = $this->model->GetYears("where code_years = '$tahun_penelitian'")->row_array();
+        if ($cek_kode > 0){
+            $this->session->set_flashdata('warning', 'Data sudah ada');
+            redirect('years');
+        }else {*/
+            $data = array(
+                //'kode_penelitian' => $kode_penelitian,
+                'username_assessor' => $this->input->post('username_assessor'),
+                'wilayah' => $wilayah,
+                'komentar_1' => $this->input->post('komentar_1'),
+                'komentar_2' => $this->input->post('komentar_2'),
+                'komentar_3' => $this->input->post('komentar_3'),
+                'komentar_4' => $this->input->post('komentar_4'),
+                'komentar_overall' => $this->input->post('komentar_overall'),
+                'tgl_terima' => $this->input->post('tgl_terima'),
+            );
+            $this->model->Simpan('penilaian', $data);
+            $data_notifikasi = array(
+                'state' => 0
+            );
+            $this->model->Update('notifikasi', $data_notifikasi, array('wilayah' => $wilayah));
+            $data_aktif = array(
+                'aktif' => 0
+            );
+            $this->model->Update('laporan', $data_aktif, array('wilayah' => $wilayah));
+            $this->session->set_flashdata('sukses', 'Simpan data berhasil dilakukan');
+            redirect('years');
+        //}
     }
 
     public function export_pdf(){

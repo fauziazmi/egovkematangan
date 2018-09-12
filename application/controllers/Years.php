@@ -27,7 +27,7 @@ class Years extends CI_Controller{
     public function index(){
         $data = array(
             'ses_level' => $this->session->userdata('ses_level'),
-            'data_laporan' => $this->model->GetDtlp('order by wilayah asc')->result_array(),
+            'data_laporan' => $this->model->GetDtlp('where aktif = 1 order by wilayah asc')->result_array(),
             'content' => 'years/years-data',
             //'data_laporan' => $this->model->GetTotDtlp('order by years_name asc')->result_array(),
         );

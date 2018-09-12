@@ -32,7 +32,7 @@ $ses_level = $this->session->userdata('ses_pekerjaan');
                 <li>
                     <a href="<?php echo site_url('faq')?>" class="w3-bar-item w3-button"> F.A.Q</a>
                 </li>
-                <?php if ($ses_level != ('Pemda' || 'Admin')){?><li>
+                <?php if ($ses_level != ('Pemda' || 'Admin' || 'Assessor')){?><li>
                     <a href="<?php echo site_url('login');?>" class="w3-bar-item w3-button"> Login</a>
                 </li>
                 <?php } ?>

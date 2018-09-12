@@ -14,7 +14,7 @@
 <link href="<?php echo base_url('assets/css/sb-admin-2.min.css');?>" rel="stylesheet">
 <link href="<?php echo base_url('assets/css/font-awesome.min.css');?>" rel="stylesheet" type="text/css">
 <link href="https://www.w3schools.com/w3css/4/w3.css" rel="stylesheet">
-
+<link rel="icon" href="<?=base_url()?>/assets/favicon/noun_Government_219231.PNG" type="image/gif">
 <!-- jQuery -->
 <script src="<?php echo base_url('assets/js/jquery.js');?>"></script>
 <script src="<?php echo base_url('assets/js/bootstrap.min.js');?>"></script>
@@ -28,6 +28,7 @@
 <script src="<?php echo base_url('assets/js/ckeditor/ckeditor.js');?>"></script>
 <script src="<?php echo base_url('assets/js/bootstrap-datetimepicker.min.js');?>"></script>
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
 <script type='text/javascript'>
      google.charts.load('visualization', '1', {
   'packages': ['geochart'],

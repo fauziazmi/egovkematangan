@@ -16,9 +16,11 @@ class Dashboard extends CI_Controller{
     }
 
     public function index(){
+        $wilayah = $this->session->userdata('ses_wilayah');
         $data = array(
             'total_years' => $this->model->GetYears()->num_rows(),
             'total_pendanaan' => $this->model->GetPendanaan()->num_rows(),
+            'total_penilaian' => $this->model->GetPenilaian(("where wilayah = '$wilayah'"))->num_rows(),
             'content' => 'template/dashboard',
         );
         $this->load->view('template/site', $data);

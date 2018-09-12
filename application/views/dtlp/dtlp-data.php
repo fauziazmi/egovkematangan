@@ -1,5 +1,4 @@
 <link href="<?php echo base_url('assets/css/dtlp-style.css');?>" rel="stylesheet" >
-</style>
 <?php $ses_wilayah = $this->session->userdata('ses_wilayah'); ?>
 <div class="page-header">
     <h2>Input Data Laporan</h2>
