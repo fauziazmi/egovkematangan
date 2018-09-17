@@ -8,8 +8,8 @@ class Model extends CI_Model{
     }
 
     public function GetNotifikasi($where = ''){
-        $data = $this->db->query('select state from notifikasi '.$where);
-        return $data;
+        return $this->db->query('select * from notifikasi '.$where);
+        //return $data;
     }
 
     public function GetTotDtlp($where = ''){

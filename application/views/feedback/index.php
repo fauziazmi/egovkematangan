@@ -58,13 +58,13 @@
         </div>
     </div>
     <?php $no = 0; foreach ($data_laporan as $data) { $no++ ?>
-        <div class="col-md-12" style="LINE-HEIGHT:50px;">
+        <div class="col-md-12" style="LINE-HEIGHT:20px;">
             <div class="col-lg-1 col-md-8">
                 <b><?php echo $no;?></b>
             </div>
             <div class="col-lg-1 col-md-8">
                 <b><?php echo $data['username_assessor'];?></b>
-                <?php echo '<br>';?> <?php echo time_elapsed_string($data['tgl_terima']);?>
+                <?php echo '<br>';?> <?php //echo time_elapsed_string($data['tgl_terima']);?>
             </div>
             <div class="col-lg-2 col-md-8">
                 <?php echo $data['komentar_1'];?>

@@ -4,10 +4,80 @@
     font-size: 14px;
     line-height: 20px
  }
+ .notif{
+    background-color:LEMONCHIFFON;
+    margin-top: 10px;
+    margin-right: 45px;
+    margin-left: 45px;
+ }
  </style>
+ <script type='text/javascript'>
+     google.charts.load('visualization', '1', {
+  'packages': ['geochart'],
+  'mapsApiKey': 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'
+});
+google.charts.setOnLoadCallback(drawVisualization);
+
+function drawVisualization() {
+  var data = new google.visualization.DataTable();
+  data.addColumn('string', 'Provinsi');
+    data.addColumn('number', 'Value');
+    data.addRows([
+    ['Aceh', 1],
+    ['Bali', 2],
+    ['Bangka Belitung', 3],
+    ['Banten', 4],
+    ['Bengkulu', 5],
+    ['Gorontalo', 6],
+    ['Jambi', 7],
+    ['Jawa Barat', 8],
+    ['Jawa Tengah', 9],
+    ['Jawa Timur', 10],
+    ['Kalimantan Barat', 11],
+    ['Kalimantan Selatan', 12],
+    ['Kalimantan Tengah', 13],
+    ['Kalimantan Timur', 14],
+    ['Kalimantan Utara', 15],
+    ['ID-KR', 16],
+    ['Lampung', 17],
+    ['ID-MA', 18],
+    ['Maluku Utara', 19],
+    ['Nusa Tenggara Barat', 20],
+    ['Nusa Tenggara Timur', 21],
+    ['Papua', 22],
+    ['ID-PB', 23],
+    ['Riau', 24],
+    ['Sulawesi Barat', 25],
+    ['Sulawesi Selatan', 26],
+    ['Sulawesi Tengah', 27],
+    ['Sulawesi Utara', 28],
+    ['Sulawesi Tenggara', 34],
+    ['Sumatera Barat', 29],
+    ['Sumatera Selatan', 30],
+    ['Sumatera Utara', 31],
+    ['Daerah Khusus Ibukota Jakarta', 32],
+    ['Daerah Istimewa Yogyakarta', 33]
+ ]);
+
+  var opts = {
+    region: 'ID',
+    displayMode: 'regions',
+    resolution: 'provinces',
+    colorAxis: {colors: ['#e31b23', 'black', '#00853f']},
+          backgroundColor: '#81d4fa',
+          datalessRegionColor: '#f8bbd0',
+          defaultColor: '#f5f5f5',
+  };
+  var geochart = new google.visualization.GeoChart(
+    document.getElementById('visualization'));
+  geochart.draw(data, opts);
+};
+    </script>
 <?php
 $ses_level = $this->session->userdata('ses_pekerjaan');
 ?>
+<?php if ($ses_level == 'Pemda'){ if($state_notifikasi == 0 && $total_penilaian > 0) { ?>
+    <p class="notif" align="center" > Anda mendapatkan Feedback terbaru, harap mengupdate <a href="<?php echo site_url('dtlp');?>"><b> Form</b></a> kembali </p> <?php }} ?>
 <div id="visualization" style="width: 100%; height: 433px;" align="center"></div>
 <div class="col-md-12">
 <?php if ($ses_level == 'Pemda'){?>

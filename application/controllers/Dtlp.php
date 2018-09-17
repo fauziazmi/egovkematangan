@@ -53,9 +53,9 @@ class Dtlp extends CI_Controller{
         $wilayah = $this->input->post('wilayah');
         //$tahun_penelitian = $this->input->post('tahun_penelitian');
         //$cek_kode = $this->model->GetNotifikasi("where wilayah = '$wilayah'")->num_rows();
-        $cek_kode = $this->model->GetNotifikasi("where wilayah = '$wilayah'");
+        $data_notifikasi = $this->model->GetNotifikasi("where wilayah = '$wilayah'")->row_array();
         //$data_years = $this->model->GetYears("where code_years = '$tahun_penelitian'")->row_array();
-        if ($cek_kode == '1'){
+        if ($data_notifikasi['state'] == 1){
             $this->session->set_flashdata('warning', 'Data sudah ada');
             redirect('dtlp');
         }else {
