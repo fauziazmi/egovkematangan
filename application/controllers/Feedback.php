@@ -8,7 +8,7 @@ class Feedback extends CI_Controller{
         $data = array(
             'ses_level' => $this->session->userdata('ses_level'),
             'data_laporan' => $this->model->GetPenilaian(("where wilayah = '$wilayah' order by id_penilaian DESC"))->result_array(),
-            'content' => 'feedback/index',
+            'content' => 'feedback/feedback-list',
             );
         $this->load->view('template/site', $data);
     }

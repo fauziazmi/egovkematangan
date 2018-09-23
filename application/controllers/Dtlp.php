@@ -40,6 +40,10 @@ class Dtlp extends CI_Controller{
             //'data_npj' => $this->model->GetDtlp('order by npj')->result_array(),
             'content' => 'dtlp/dtlp-data', //ke folder vie dtlp/dtlp-data
             //'data_laporan' => $this->model->GetTotDtlp('order by years_name asc')->result_array(),
+            'data_pertanyaan_1' => $this->model->GetPertanyaan("where dimensi = 'sumber daya'")->result_array(),
+            'data_pertanyaan_2' => $this->model->GetPertanyaan("where dimensi = 'pengungkit'")->result_array(),
+            'data_pertanyaan_3' => $this->model->GetPertanyaan("where dimensi = 'nilai'")->result_array(),
+            'data_pertanyaan_4' => $this->model->GetPertanyaan("where dimensi = 'dampak'")->result_array(),
         );
         $this->load->view('template/site', $data);
     }

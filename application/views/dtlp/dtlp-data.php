@@ -1,18 +1,18 @@
 <link href="<?php echo base_url('assets/css/dtlp-style.css');?>" rel="stylesheet" >
 <?php $ses_wilayah = $this->session->userdata('ses_wilayah'); ?>
-<div class="page-header">
+<div class="page-header" style="margin-left:45px;">
     <h2>Input Data Laporan</h2>
     <?php date_default_timezone_set('Asia/Jakarta'); echo date("Y-m-d")?>
 </div>
 <div class="row">
     <div class="col-sm-12 col-md-12">
-        <h4 class="modal-title" style="text-align: center"><b>Pertanyaan</b></h4>
-    <div class="tabs">
+        <h4 class="modal-title" style="text-align: center"><b>Dimensi egov Maturity</b></h4>
+    <div class="tabs" style="margin-top:20px">
     <ul class="tab-links">
-		    <li class="active"><a href="#tab1">1</a></li>
-		    <li><a href="#tab2">2</a></li>
-		    <li><a href="#tab3">3</a></li>
-		    <li><a href="#tab4">4</a></li>
+		    <li class="active"><a href="#tab1">Sumber Daya</a></li>
+		    <li><a href="#tab2">Pengungkit</a></li>
+		    <li><a href="#tab3">Nilai</a></li>
+		    <li><a href="#tab4">Dampak</a></li>
 	    </ul>
 	    <div class="tab-content">
             <form action="<?php echo site_url('dtlp/simpan_data')?>" enctype="multipart/form-data" method="post">
@@ -47,42 +47,63 @@
                         </div>
                     </div>
                 <?php } ?>
+                <div class="modal-header">
+                    <h4 class="modal-title" style="text-align:center;"><b>Petunjuk Umum</b></h4>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4"><h4 style="text-align:center;"><b>Pertanyaan</b></h4></div>
+                    <div class="col-sm-6"><h4 style="text-align:center;"><b>State of Development</b></h4></div>
+                    <div class="col-sm-2"><h4 style="text-align:center;"><b>Bukti</b></h4></div>
+                </div>
+                <?php
+                    $no = 0; foreach ($data_pertanyaan_1 as $data){ $no++  
+                        ?>
                     <div class="modal-body">
-                        <div class="form-group">
-                            <label>Pertanyaan</label>
-                            <p style="color:black;">Is there a clear, long-term strategy for e-government that sees IT as a means to achieving broader reform objectives?</p>
+                        <div class="form-group">                            
+                            <p style="color:black;" class="col-sm-4"><?php echo $data['variabel'];?></p>
                         </div>
-                        <div class="form-group">
-                            <label>Bukti</label>
-                            <input type="file" name="pdf_1">
+                        <div class="col-sm-6" align="center">                    
+                            <label>1</label><input type="radio" checked="" name="jawaban_<?php echo $no ?>" value="1">
+                            <label>2</label><input type="radio" checked="" name="jawaban_<?php echo $no ?>" value="2">
+                            <label>3</label><input type="radio" checked="" name="jawaban_<?php echo $no ?>" value="3">
+                            <label>4</label><input type="radio" checked="" name="jawaban_<?php echo $no ?>" value="4">
+                            <label>5</label><input type="radio" checked="" name="jawaban_<?php echo $no ?>" value="5">
+                        </div>
+                        <div class="col-sm-2">
+                            <input type="file" name="pdf_<?php echo $no ?>">
                         </div>
                     </div>
-                    <div class="modal-footer">
-                        <label>Yes</label><input type="radio" checked="" name="jawaban_1" value="yes">
-                        <label>No</label><input type="radio" checked="" name="jawaban_1" value="no">
-                    </div>
+                    <div class="modal-footer" style="margin-top:15px"></div>
+                    <?php }?>
                     <div align="right">
                     <a href="#tab2" class="next" >Next &raquo;</a>
                     </div>
             </div>
             
             <div id="tab2" class="tab">
+            <div class="row">
+                    <div class="col-sm-4"><h4 style="text-align:center;"><b>Pertanyaan</b></h4></div>
+                    <div class="col-sm-6"><h4 style="text-align:center;"><b>State of Development</b></h4></div>
+                    <div class="col-sm-2"><h4 style="text-align:center;"><b>Bukti</b></h4></div>
+            </div>
+            <?php  $no = 0; foreach ($data_pertanyaan_2 as $data){ $no++ ?>
                 <div class="modal-body">
-                        <div class="form-group">
-                            <label>Pertanyaan</label>
-                            <p style="color:black;">Are there other factors likely to cause the e-government project to fail?</p>
+                        <div class="form-group">                            
+                            <p style="color:black;" class="col-sm-4"><?php echo $data['variabel'];?></p>
                         </div>
-                        <div class="form-group">
-                            <label>Bukti</label>
-                            <input type="file" name="pdf_2">
+                        <div class="col-sm-6" align="center">                    
+                            <label>1</label><input type="radio" checked="" name="jawaban_<?php echo $no ?>" value="1">
+                            <label>2</label><input type="radio" checked="" name="jawaban_<?php echo $no ?>" value="2">
+                            <label>3</label><input type="radio" checked="" name="jawaban_<?php echo $no ?>" value="3">
+                            <label>4</label><input type="radio" checked="" name="jawaban_<?php echo $no ?>" value="4">
+                            <label>5</label><input type="radio" checked="" name="jawaban_<?php echo $no ?>" value="5">
+                        </div>
+                        <div class="col-sm-2">
+                            <input type="file" name="pdf_<?php echo $no ?>">
                         </div>
                 </div>
-                <div class="modal-footer">
-                    <div id="button-holder">
-                    <label>Yes</label><input type="radio" checked="" name="jawaban_2" value="yes">
-                        <label>No</label><input type="radio" checked="" name="jawaban_2" value="no">
-                    </div>
-                </div>
+                    <div class="modal-footer" style="margin-top:15px"></div>
+                <?php }?>
                 <div align="center">
                     <a href="#tab1" class="previous">&laquo; Previous</a>
                     <a href="#tab3" class="next">Next &raquo;</a>
@@ -90,22 +111,29 @@
             </div>
 
             <div id="tab3" class="tab">
+            <div class="row">
+                    <div class="col-sm-4"><h4 style="text-align:center;"><b>Pertanyaan</b></h4></div>
+                    <div class="col-sm-6"><h4 style="text-align:center;"><b>State of Development</b></h4></div>
+                    <div class="col-sm-2"><h4 style="text-align:center;"><b>Bukti</b></h4></div>
+            </div>
+            <?php  $no = 0; foreach ($data_pertanyaan_3 as $data){ $no++ ?>
                     <div class="modal-body">
                         <div class="form-group">
-                            <label>Pertanyaan</label>
-                            <p style="color:black;">Are there other factors likely to cause the e-government project to fail?</p>
+                            <p style="color:black;" class="col-sm-4"><?php echo $data['variabel'];?></p>
                         </div>
-                        <div class="form-group">
-                            <label>Bukti</label>
-                            <input type="file" name="pdf_3">
+                        <div class="col-sm-6" align="center">                    
+                            <label>1</label><input type="radio" checked="" name="jawaban_<?php echo $no ?>" value="1">
+                            <label>2</label><input type="radio" checked="" name="jawaban_<?php echo $no ?>" value="2">
+                            <label>3</label><input type="radio" checked="" name="jawaban_<?php echo $no ?>" value="3">
+                            <label>4</label><input type="radio" checked="" name="jawaban_<?php echo $no ?>" value="4">
+                            <label>5</label><input type="radio" checked="" name="jawaban_<?php echo $no ?>" value="5">
+                        </div>
+                        <div class="col-sm-2">
+                            <input type="file" name="pdf_<?php echo $no ?>">
                         </div>
                     </div>
-                    <div class="modal-footer">
-                        <div id="button-holder">
-                            <label>Yes</label><input type="radio" checked="" name="jawaban_3" value="yes">
-                            <label>No</label><input type="radio" checked="" name="jawaban_3" value="no">
-                        </div>
-                    </div>
+                    <div class="modal-footer" style="margin-top:15px"></div>
+                <?php }?>
                     <div align="center">
                         <a href="#tab2" class="previous">&laquo; Previous</a>
                         <a href="#tab4" class="next">Next &raquo;</a>
@@ -113,22 +141,29 @@
             </div>
 
             <div id="tab4" class="tab">
+            <div class="row">
+                    <div class="col-sm-4"><h4 style="text-align:center;"><b>Pertanyaan</b></h4></div>
+                    <div class="col-sm-6"><h4 style="text-align:center;"><b>State of Development</b></h4></div>
+                    <div class="col-sm-2"><h4 style="text-align:center;"><b>Bukti</b></h4></div>
+            </div>
+            <?php   foreach ($data_pertanyaan_4 as $data){  ?>
                     <div class="modal-body">
                         <div class="form-group">
-                            <label>Pertanyaan</label>
-                            <p style="color:black;">Are there other factors likely to cause the e-government project to fail?</p>
+                            <p style="color:black;" class="col-sm-4"><?php echo $data['variabel'];?></p>
                         </div>
-                        <div class="form-group">
-                            <label>Bukti</label>
-                            <input type="file" name="pdf_4">
+                        <div class="col-sm-6" align="center">                    
+                            <label>1</label><input type="radio" checked="" name="jawaban_<?php echo $no ?>" value="1">
+                            <label>2</label><input type="radio" checked="" name="jawaban_<?php echo $no ?>" value="2">
+                            <label>3</label><input type="radio" checked="" name="jawaban_<?php echo $no ?>" value="3">
+                            <label>4</label><input type="radio" checked="" name="jawaban_<?php echo $no ?>" value="4">
+                            <label>5</label><input type="radio" checked="" name="jawaban_<?php echo $no ?>" value="5">
+                        </div>
+                        <div class="col-sm-2">
+                            <input type="file" name="pdf_<?php echo $no ?>">
                         </div>
                     </div>
-                    <div class="modal-footer">
-                        <div id="button-holder">
-                            <label>Yes</label><input type="radio" checked="" name="jawaban_4" value="yes">
-                            <label>No</label><input type="radio" checked="" name="jawaban_4" value="no">
-                        </div>
-                    </div>
+                    <div class="modal-footer" style="margin-top:15px"></div>
+                <?php }?>
                     <div align="left">
                         <a href="#tab3" class="previous">&laquo; Previous</a>
                     </div>

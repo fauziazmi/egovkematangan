@@ -12,6 +12,12 @@ class Model extends CI_Model{
         //return $data;
     }
 
+    public function GetPertanyaan($where ='')
+    {
+        $data = $this->db->query('select * from pertanyaan '.$where);
+        return $data;
+    }
+
     public function GetTotDtlp($where = ''){
         return $this->db->query('select *, pendanaan.pendanaan_name, years.years_name from laporan LEFT JOIN pendanaan 
                   ON laporan.pendanaan = pendanaan.code_pendanaan LEFT JOIN years ON laporan.tahun_penelitian = years.code_years '.$where);

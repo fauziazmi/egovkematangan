@@ -1,5 +1,5 @@
 <div class="page-header">
-    <h2>Data User</h2>
+    <h2 style="margin-left:45px">Data User</h2>
 </div>
 <div class="row">
     <div class="col-sm-12 col-md-12">

@@ -30,7 +30,7 @@
         return $string ? implode(', ', $string) . ' ago' : 'just now';
     }
 ?>
-<div class="page-header">
+<div class="page-header" style="margin-left:45px">
     <h2>Feedback</h2>
 </div>
 <div class="col-md-12">
