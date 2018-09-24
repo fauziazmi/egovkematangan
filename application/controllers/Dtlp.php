@@ -69,23 +69,27 @@ class Dtlp extends CI_Controller{
                 'max_size' => '1000000',
             );
             $this->load->library('upload', $config);
-            $this->upload->do_upload('pdf_1');
+            //$this->upload->do_upload('pdf_1');
+            $this->upload->do_upload('pdf_1_1');
             $upload_data = $this->upload->data();
             $pdf_1= $upload_data['file_name'];
 
-            $this->upload->do_upload('pdf_2');
+            //$this->upload->do_upload('pdf_2');
+            $this->upload->do_upload('pdf_2_1');
             $upload_data = $this->upload->data();
             $pdf_2= $upload_data['file_name'];
 
-            $this->upload->do_upload('pdf_3');
+            //$this->upload->do_upload('pdf_3');
+            $this->upload->do_upload('pdf_3_1');
             $upload_data = $this->upload->data();
             $pdf_3= $upload_data['file_name'];
 
-            $this->upload->do_upload('pdf_4');
+            //$this->upload->do_upload('pdf_4');
+            $this->upload->do_upload('pdf_4_1');
             $upload_data = $this->upload->data();
             $pdf_4= $upload_data['file_name'];
 
-            $jawaban_1 = $this->input->post('jawaban_1');
+            /*$jawaban_1 = $this->input->post('jawaban_1');
             $jawaban_2 = $this->input->post('jawaban_2');
             $jawaban_3 = $this->input->post('jawaban_3');
             $jawaban_4 = $this->input->post('jawaban_4');
@@ -93,24 +97,49 @@ class Dtlp extends CI_Controller{
             if($jawaban_1 == 'yes') $nilai_1 = 1; else 0; 
             if($jawaban_2 == 'yes') $nilai_2 = 1; else 0; 
             if($jawaban_3 == 'yes') $nilai_3 = 1; else 0; 
-            if($jawaban_4 == 'yes') $nilai_4 = 1; else 0; 
-            $nilai = $nilai_1 + $nilai_2 + $nilai_3 + $nilai_4;
+            if($jawaban_4 == 'yes') $nilai_4 = 1; else 0;*/ 
+            //$nilai = $nilai_1 + $nilai_2 + $nilai_3 + $nilai_4;
             $data = array(
                 //'kode_penelitian' => $kode_penelitian,
-                'jawaban_1' => $jawaban_1,
+                /*'jawaban_1' => $jawaban_1,
                 'jawaban_2' => $jawaban_2,
                 'jawaban_3' => $jawaban_3,
                 'jawaban_4' => $jawaban_4,
-                'nilai' => $nilai,
+                'nilai' => $nilai,*/
                 'wilayah' => $this->input->post('wilayah'),
                 'tgl_terima' => $this->input->post('tgl_terima'),
-                'pdf_1' => $pdf_1,
+                /*'pdf_1' => $pdf_1,
                 'pdf_2' => $pdf_2,
                 'pdf_3' => $pdf_3,
-                'pdf_4' => $pdf_4,
+                'pdf_4' => $pdf_4,*/
                 'aktif' => '1'
             );
             $this->model->Simpan('laporan', $data);
+            $data_laporan = $this->model->GetDtlp("where wilayah = '$wilayah'")->row_array();
+            $data_dim1 = array(
+                'id_laporan' => $data_laporan['id'],
+                'jawaban_1_1' => $this->input->post('jawaban_1_1'),
+                'pdf_1_1' => $pdf_1,
+            );
+            $this->model->Simpan('dimensi_1', $data_dim1);
+            $data_dim2 = array(
+                'id_laporan' => $data_laporan['id'],
+                'jawaban_2_1' => $this->input->post('jawaban_2_1'),
+                'pdf_2_1' => $pdf_2,
+            );
+            $this->model->Simpan('dimensi_2', $data_dim2);
+            $data_dim3 = array(
+                'id_laporan' => $data_laporan['id'],
+                'jawaban_3_1' => $this->input->post('jawaban_3_1'),
+                'pdf_3_1' => $pdf_3,
+            );
+            $this->model->Simpan('dimensi_3', $data_dim3);
+            $data_dim4 = array(
+                'id_laporan' => $data_laporan['id'],
+                'jawaban_4_1' => $this->input->post('jawaban_4_1'),
+                'pdf_4_1' => $pdf_4,
+            );
+            $this->model->Simpan('dimensi_4', $data_dim4);
             $data_notifikasi = array(
                 'state' => 1
             );
