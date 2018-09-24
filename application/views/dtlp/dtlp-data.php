@@ -1,3 +1,12 @@
+<style>
+.checkboxgroup{
+    display:inline-block;
+    text-align:center;
+}
+.checkboxgroup label {
+    display:block;
+}
+</style>
 <link href="<?php echo base_url('assets/css/dtlp-style.css');?>" rel="stylesheet" >
 <?php $ses_wilayah = $this->session->userdata('ses_wilayah'); ?>
 <div class="page-header" style="margin-left:45px;">
@@ -58,22 +67,41 @@
                 <?php
                     $no = 0; foreach ($data_pertanyaan_1 as $data){ $no++  
                         ?>
+                    <div class="row">
                     <div class="modal-body">
                         <div class="form-group">                            
                             <p style="color:black;" class="col-sm-4"><?php echo $data['variabel'];?></p>
                         </div>
-                        <div class="col-sm-6" align="center">                    
-                            <label>1</label><input type="radio" checked="" name="jawaban_<?php echo $no ?>" value="1">
-                            <label>2</label><input type="radio" checked="" name="jawaban_<?php echo $no ?>" value="2">
-                            <label>3</label><input type="radio" checked="" name="jawaban_<?php echo $no ?>" value="3">
-                            <label>4</label><input type="radio" checked="" name="jawaban_<?php echo $no ?>" value="4">
-                            <label>5</label><input type="radio" checked="" name="jawaban_<?php echo $no ?>" value="5">
+                        <div class="col-sm-6" align="center">
+                        <div id="checkboxes">
+                                <div class="checkboxgroup">    
+                                    <label for="my_radio_button_id1">0</label><input type="radio" checked="" name="jawaban_<?php echo $no ?>" value="0">                
+                                </div>
+                                <div class="checkboxgroup">                                
+                                    <label for="my_radio_button_id2">1</label><input type="radio" checked="" name="jawaban_<?php echo $no ?>" value="1">
+                                </div>
+                                <div class="checkboxgroup">
+                                    <label for="my_radio_button_id3">2</label><input type="radio" checked="" name="jawaban_<?php echo $no ?>" value="2">
+                                </div>
+                                <div class="checkboxgroup">
+                                    <label for="my_radio_button_id4">3</label><input type="radio" checked="" name="jawaban_<?php echo $no ?>" value="3">
+                                </div>
+                                <div class="checkboxgroup">
+                                    <label for="my_radio_button_id5">4</label><input type="radio" checked="" name="jawaban_<?php echo $no ?>" value="4">
+                                </div>
+                                <div class="checkboxgroup">
+                                    <label for="my_radio_button_id6">5</label><input type="radio" checked="" name="jawaban_<?php echo $no ?>" value="5">
+                                </div>
+                            </div>
                         </div>
                         <div class="col-sm-2">
-                            <input type="file" name="pdf_<?php echo $no ?>">
+                            <div class="form-group">
+                                <input type="file" name="pdf_<?php echo $no ?>">
+                            </div>
                         </div>
                     </div>
-                    <div class="modal-footer" style="margin-top:15px"></div>
+                    </div>
+                    <div class="modal-footer" style="margin-top:5px"></div>
                     <?php }?>
                     <div align="right">
                     <a href="#tab2" class="next" >Next &raquo;</a>
@@ -87,11 +115,13 @@
                     <div class="col-sm-2"><h4 style="text-align:center;"><b>Bukti</b></h4></div>
             </div>
             <?php  $no = 0; foreach ($data_pertanyaan_2 as $data){ $no++ ?>
+                <div class="row">
                 <div class="modal-body">
                         <div class="form-group">                            
                             <p style="color:black;" class="col-sm-4"><?php echo $data['variabel'];?></p>
                         </div>
-                        <div class="col-sm-6" align="center">                    
+                        <div class="col-sm-6" align="center">
+                            <label >0</label><input type="radio" checked="" name="jawaban_<?php echo $no ?>" value="0">                    
                             <label>1</label><input type="radio" checked="" name="jawaban_<?php echo $no ?>" value="1">
                             <label>2</label><input type="radio" checked="" name="jawaban_<?php echo $no ?>" value="2">
                             <label>3</label><input type="radio" checked="" name="jawaban_<?php echo $no ?>" value="3">
@@ -101,6 +131,7 @@
                         <div class="col-sm-2">
                             <input type="file" name="pdf_<?php echo $no ?>">
                         </div>
+                </div>
                 </div>
                     <div class="modal-footer" style="margin-top:15px"></div>
                 <?php }?>
@@ -117,11 +148,13 @@
                     <div class="col-sm-2"><h4 style="text-align:center;"><b>Bukti</b></h4></div>
             </div>
             <?php  $no = 0; foreach ($data_pertanyaan_3 as $data){ $no++ ?>
+                <div class="row">
                     <div class="modal-body">
                         <div class="form-group">
                             <p style="color:black;" class="col-sm-4"><?php echo $data['variabel'];?></p>
                         </div>
-                        <div class="col-sm-6" align="center">                    
+                        <div class="col-sm-6" align="center">    
+                            <label>0</label><input type="radio" checked="" name="jawaban_<?php echo $no ?>" value="0">                
                             <label>1</label><input type="radio" checked="" name="jawaban_<?php echo $no ?>" value="1">
                             <label>2</label><input type="radio" checked="" name="jawaban_<?php echo $no ?>" value="2">
                             <label>3</label><input type="radio" checked="" name="jawaban_<?php echo $no ?>" value="3">
@@ -131,6 +164,7 @@
                         <div class="col-sm-2">
                             <input type="file" name="pdf_<?php echo $no ?>">
                         </div>
+                    </div>
                     </div>
                     <div class="modal-footer" style="margin-top:15px"></div>
                 <?php }?>
@@ -146,23 +180,42 @@
                     <div class="col-sm-6"><h4 style="text-align:center;"><b>State of Development</b></h4></div>
                     <div class="col-sm-2"><h4 style="text-align:center;"><b>Bukti</b></h4></div>
             </div>
-            <?php   foreach ($data_pertanyaan_4 as $data){  ?>
+            <?php   $no = 0; foreach ($data_pertanyaan_4 as $data){ $no++ ?>
+                <div class="row">
                     <div class="modal-body">
                         <div class="form-group">
-                            <p style="color:black;" class="col-sm-4"><?php echo $data['variabel'];?></p>
+                            <p style="color:black;" class="col-sm-4"><?php echo $data['pertanyaan'];?></p>
                         </div>
-                        <div class="col-sm-6" align="center">                    
-                            <label>1</label><input type="radio" checked="" name="jawaban_<?php echo $no ?>" value="1">
-                            <label>2</label><input type="radio" checked="" name="jawaban_<?php echo $no ?>" value="2">
-                            <label>3</label><input type="radio" checked="" name="jawaban_<?php echo $no ?>" value="3">
-                            <label>4</label><input type="radio" checked="" name="jawaban_<?php echo $no ?>" value="4">
-                            <label>5</label><input type="radio" checked="" name="jawaban_<?php echo $no ?>" value="5">
+                        <div class="col-sm-6" align="center">
+                            <div id="checkboxes">
+                                <div class="checkboxgroup">    
+                                    <label for="my_radio_button_id1">0</label><input type="radio" checked="" name="jawaban_<?php echo $no ?>" value="0">                
+                                </div>
+                                <div class="checkboxgroup">                                
+                                    <label for="my_radio_button_id2">1</label><input type="radio" checked="" name="jawaban_<?php echo $no ?>" value="1">
+                                </div>
+                                <div class="checkboxgroup">
+                                    <label for="my_radio_button_id3">2</label><input type="radio" checked="" name="jawaban_<?php echo $no ?>" value="2">
+                                </div>
+                                <div class="checkboxgroup">
+                                    <label for="my_radio_button_id4">3</label><input type="radio" checked="" name="jawaban_<?php echo $no ?>" value="3">
+                                </div>
+                                <div class="checkboxgroup">
+                                    <label for="my_radio_button_id5">4</label><input type="radio" checked="" name="jawaban_<?php echo $no ?>" value="4">
+                                </div>
+                                <div class="checkboxgroup">
+                                    <label for="my_radio_button_id6">5</label><input type="radio" checked="" name="jawaban_<?php echo $no ?>" value="5">
+                                </div>
+                            </div>
                         </div>
                         <div class="col-sm-2">
-                            <input type="file" name="pdf_<?php echo $no ?>">
+                            <div class="form-group">
+                                <input type="file" name="pdf_<?php echo $no ?>">
+                            </div>
                         </div>
                     </div>
-                    <div class="modal-footer" style="margin-top:15px"></div>
+                </div>
+                    <div class="modal-footer" style="margin-top:5px"></div>
                 <?php }?>
                     <div align="left">
                         <a href="#tab3" class="previous">&laquo; Previous</a>
