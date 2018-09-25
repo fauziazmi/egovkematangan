@@ -18,6 +18,22 @@ class Model extends CI_Model{
         return $data;
     }
 
+    public function GetDimensi1($where =''){
+        return $this->db->query('select * from dimensi_1 '.$where);
+    }
+
+    public function GetDimensi2($where =''){
+        return $this->db->query('select * from dimensi_2 '.$where);
+    }
+
+    public function GetDimensi3($where =''){
+        return $this->db->query('select * from dimensi_3 '.$where);
+    }
+
+    public function GetDimensi4($where =''){
+        return $this->db->query('select * from dimensi_4 '.$where);
+    }
+
     public function GetTotDtlp($where = ''){
         return $this->db->query('select *, pendanaan.pendanaan_name, years.years_name from laporan LEFT JOIN pendanaan 
                   ON laporan.pendanaan = pendanaan.code_pendanaan LEFT JOIN years ON laporan.tahun_penelitian = years.code_years '.$where);

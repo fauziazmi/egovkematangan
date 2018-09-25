@@ -70,7 +70,7 @@
                     <div class="row">
                     <div class="modal-body">
                         <div class="form-group">                            
-                            <p style="color:black;" class="col-sm-4"><?php echo $data['variabel'];?></p>
+                            <p style="color:black;" class="col-sm-4"><?php echo $data['pertanyaan'];?> <br><font color="grey"><i><?php echo $data['bukti'];?></i></font></p>
                         </div>
                         <div class="col-sm-6" align="center">
                             <div id="checkboxes">
@@ -165,7 +165,7 @@
                 <div class="row">
                     <div class="modal-body">
                         <div class="form-group">
-                            <p style="color:black;" class="col-sm-4"><?php echo $data['variabel'];?></p>
+                            <p style="color:black;" class="col-sm-4"><?php echo $data['pertanyaan'];?> <br><font color="grey"><i><?php echo $data['bukti'];?></i></font></p>
                         </div>
                         <div class="col-sm-6" align="center">    
                         <div id="checkboxes">
@@ -194,6 +194,7 @@
                         </div>
                     </div>
                 </div>
+                
                     <div class="modal-footer" style="margin-top:5px"></div>
                 <?php }?>
                     <div align="center">

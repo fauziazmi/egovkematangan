@@ -32,6 +32,7 @@
 </div>
 <table id="table" class="table penelitian table-bordered table-striped" width="100%">
                     <thead>
+                        <b>Sumber Daya</b>
                     <tr>
                         <th width="4%">NO</th>
                         <th width="40%">Pertanyaan</th>
@@ -41,34 +42,84 @@
                     </tr>
                     </thead>
                     <tbody>
+                    <?php   $no = 0; foreach ($data_pertanyaan_1 as $data){ $no++ ?>  
                         <tr>
-                            <td>1</td>
-                            <td>Is there a clear, long-term strategy for e-government that sees IT as a means to achieving broader reform objectives?</td>
-                            <td><?php if ($jawaban_1 != null ){ echo $jawaban_1; } else {echo '-';}?></td>
+                            <td><?php echo $no;?></td>
+                            <td><?php echo $data['pertanyaan'];?></td>
+                            <td><?php if ($data_dimensi1['jawaban_1_'.$no] != null ){ echo $data_dimensi1['jawaban_1_'.$no]; } else {echo '-';}?></td>
                             <td><textarea class="form-control" name="komentar_1"></textarea></td>
-                            <td><a href="<?php echo base_url('assets/pdf/'.$wilayah.'/'.$pdf_1)?>" data-toggle="tooltip" data-placement ="top" title="lihat pdf" target="_blank"><span class="fa fa-file-pdf-o" style="font-size: 18pt;"> </span></a></td>                          
+                            <td><a href="<?php echo base_url('assets/pdf/'.$wilayah.'/'.$data_dimensi1['pdf_1_'.$no])?>" data-toggle="tooltip" data-placement ="top" title="lihat pdf" target="_blank"><span class="fa fa-file-pdf-o" style="font-size: 18pt;"> </span></a></td>                          
                         </tr>
+                    <?php }?>
+                    </tbody>
+                </table>
+                <table id="table" class="table penelitian table-bordered table-striped" width="100%">
+                    <thead>
+                        <b>Pengungkit</b>
+                    <tr>
+                        <th width="4%">NO</th>
+                        <th width="40%">Pertanyaan</th>
+                        <th width="10%">Jawaban</th>
+                        <th width="40%">Feedback</th>
+                        <th width="6%">Bukti</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <?php   $no = 0; foreach ($data_pertanyaan_2 as $data){ $no++ ?>  
                         <tr>
-                            <td>2</td>
-                            <td>Are there other factors likely to cause the e-government project to fail?</td>
-                            <td><?php if ($jawaban_1 != null ){ echo $jawaban_2; } else {echo '-';}?></td>
-                            <td><textarea class="form-control" name="komentar_2"></textarea></td>                          
-                            <td><a href="<?php echo base_url('assets/pdf/'.$wilayah.'/'.$pdf_2)?>" data-toggle="tooltip" data-placement ="top" title="lihat pdf" target="_blank"><span class="fa fa-file-pdf-o" style="font-size: 18pt;"> </span></a></td>
+                            <td><?php echo $no;?></td>
+                            <td><?php echo $data['variabel'];?></td>
+                            <td><?php if ($data_dimensi2['jawaban_2_'.$no] != null ){ echo $data_dimensi2['jawaban_2_'.$no]; } else {echo '-';}?></td>
+                            <td><textarea class="form-control" name="komentar_2"></textarea></td>
+                            <td><a href="<?php echo base_url('assets/pdf/'.$wilayah.'/'.$data_dimensi2['pdf_2_'.$no])?>" data-toggle="tooltip" data-placement ="top" title="lihat pdf" target="_blank"><span class="fa fa-file-pdf-o" style="font-size: 18pt;"> </span></a></td>                          
                         </tr>
+                    <?php }?>
+                    </tbody>
+                </table>
+                <table id="table" class="table penelitian table-bordered table-striped" width="100%">
+                    <thead>
+                        <b>Nilai</b>
+                    <tr>
+                        <th width="4%">NO</th>
+                        <th width="40%">Pertanyaan</th>
+                        <th width="10%">Jawaban</th>
+                        <th width="40%">Feedback</th>
+                        <th width="6%">Bukti</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <?php   $no = 0; foreach ($data_pertanyaan_3 as $data){ $no++ ?>  
                         <tr>
-                            <td>3</td>
-                            <td>Are there other factors likely to cause the e-government project to fail?</td>
-                            <td><?php if ($jawaban_1 != null ){ echo $jawaban_3; } else {echo '-';}?></td>
+                            <td><?php echo $no;?></td>
+                            <td><?php echo $data['pertanyaan'];?></td>
+                            <td><?php if ($data_dimensi3['jawaban_3_'.$no] != null ){ echo $data_dimensi3['jawaban_3_'.$no]; } else {echo '-';}?></td>
                             <td><textarea class="form-control" name="komentar_3"></textarea></td>
-                            <td><a href="<?php echo base_url('assets/pdf/'.$wilayah.'/'.$pdf_3)?>" data-toggle="tooltip" data-placement ="top" title="lihat pdf" target="_blank"><span class="fa fa-file-pdf-o" style="font-size: 18pt;"> </span></a></td>                          
+                            <td><a href="<?php echo base_url('assets/pdf/'.$wilayah.'/'.$data_dimensi3['pdf_3_'.$no])?>" data-toggle="tooltip" data-placement ="top" title="lihat pdf" target="_blank"><span class="fa fa-file-pdf-o" style="font-size: 18pt;"> </span></a></td>                          
                         </tr>
+                    <?php }?>
+                    </tbody>
+                </table>
+                <table id="table" class="table penelitian table-bordered table-striped" width="100%">
+                    <thead>
+                        <b>Dampak</b>
+                    <tr>
+                        <th width="4%">NO</th>
+                        <th width="40%">Pertanyaan</th>
+                        <th width="10%">Jawaban</th>
+                        <th width="40%">Feedback</th>
+                        <th width="6%">Bukti</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <?php   $no = 0; foreach ($data_pertanyaan_4 as $data){ $no++ ?>  
                         <tr>
-                            <td>4</td>
-                            <td>Are there other factors likely to cause the e-government project to fail?</td>
-                            <td><?php if ($jawaban_1 != null ){ echo $jawaban_4; } else {echo '-';}?></td>
+                            <td><?php echo $no;?></td>
+                            <td><?php echo $data['pertanyaan'];?></td>
+                            <td><?php if ($data_dimensi4['jawaban_4_'.$no] != null ){ echo $data_dimensi4['jawaban_4_'.$no]; } else {echo '-';}?></td>
                             <td><textarea class="form-control" name="komentar_4"></textarea></td>
-                            <td><a href="<?php echo base_url('assets/pdf/'.$wilayah.'/'.$pdf_4)?>" data-toggle="tooltip" data-placement ="top" title="lihat pdf" target="_blank"><span class="fa fa-file-pdf-o" style="font-size: 18pt;"> </span></a></td>                          
+                            <td><a href="<?php echo base_url('assets/pdf/'.$wilayah.'/'.$data_dimensi4['pdf_4_'.$no])?>" data-toggle="tooltip" data-placement ="top" title="lihat pdf" target="_blank"><span class="fa fa-file-pdf-o" style="font-size: 18pt;"> </span></a></td>                          
                         </tr>
+                    <?php }?>
                     </tbody>
                 </table>
 	<label style="margin-right: 7%; margin-left: 7%;">Review</label>

@@ -18,10 +18,10 @@
                     <tr>
                         <th width="4%">NO</th>
                         <th width="10%">WILAYAH</th>
-                        <th width="10%">JAWABAN 1</th>
-                        <th width="10%">JAWABAN 2</th>
-                        <th width="10%">JAWABAN 3</th>
-                        <th width="10%">JAWABAN 4</th>
+                        <th width="10%">NILAI DIMENSI 1</th>
+                        <th width="10%">NILAI DIMENSI 2</th>
+                        <th width="10%">NILAI DIMENSI 3</th>
+                        <th width="10%">NILAI DIMENSI 4</th>
                         <th width="10%">NILAI</th>
                         <th width="16%">TANGGAL TERIMA</th>
                         <?php if ($ses_level == 'Assessor') {?>
