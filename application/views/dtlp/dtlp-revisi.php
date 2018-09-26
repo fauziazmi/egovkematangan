@@ -30,9 +30,15 @@
 <div class="panel-heading" align="center" style="font-weight: bold;">
     <?php echo $wilayah;?>
 </div>
-<table id="table" class="table penelitian table-bordered table-striped" width="100%">
+    <div class="panel panel-default">
+            <div class="panel-heading">
+            <b>Sumber Daya</b>
+                <a href="#widget1" data-toggle="collapse"><span class="fa fa-chevron-down" style="float: right"></span>
+                </a>
+            </div>
+            <div id="widget1" class="panel-body collapse in">
+            <table id="table" class="table penelitian table-bordered table-striped" width="100%">
                     <thead>
-                        <b>Sumber Daya</b>
                     <tr>
                         <th width="4%">NO</th>
                         <th width="40%">Pertanyaan</th>
@@ -53,9 +59,17 @@
                     <?php }?>
                     </tbody>
                 </table>
+            </div>
+    </div>
+    <div class="panel panel-default">
+            <div class="panel-heading">
+            <b>Pengungkit</b>
+                <a href="#widget2" data-toggle="collapse"><span class="fa fa-chevron-down" style="float: right"></span>
+                </a>
+            </div>
+            <div id="widget2" class="panel-body collapse in">
                 <table id="table" class="table penelitian table-bordered table-striped" width="100%">
                     <thead>
-                        <b>Pengungkit</b>
                     <tr>
                         <th width="4%">NO</th>
                         <th width="40%">Pertanyaan</th>
@@ -76,9 +90,17 @@
                     <?php }?>
                     </tbody>
                 </table>
+            </div>
+    </div>
+    <div class="panel panel-default">
+            <div class="panel-heading">
+            <b>Nilai</b>
+                <a href="#widget3" data-toggle="collapse"><span class="fa fa-chevron-down" style="float: right"></span>
+                </a>
+            </div>
+            <div id="widget3" class="panel-body collapse in">
                 <table id="table" class="table penelitian table-bordered table-striped" width="100%">
                     <thead>
-                        <b>Nilai</b>
                     <tr>
                         <th width="4%">NO</th>
                         <th width="40%">Pertanyaan</th>
@@ -99,9 +121,17 @@
                     <?php }?>
                     </tbody>
                 </table>
+            </div>
+    </div>
+    <div class="panel panel-default">
+            <div class="panel-heading">
+            <b>Dampak</b>
+                <a href="#widget4" data-toggle="collapse"><span class="fa fa-chevron-down" style="float: right"></span>
+                </a>
+            </div>
+            <div id="widget4" class="panel-body collapse in">
                 <table id="table" class="table penelitian table-bordered table-striped" width="100%">
                     <thead>
-                        <b>Dampak</b>
                     <tr>
                         <th width="4%">NO</th>
                         <th width="40%">Pertanyaan</th>
@@ -122,6 +152,9 @@
                     <?php }?>
                     </tbody>
                 </table>
+            </div>
+    </div>
+
 	<label style="margin-right: 7%; margin-left: 7%;">Review</label>
 	<div class="form-group" style="margin-right: 7%; margin-left: 7%;">
 		<div class="form-line">

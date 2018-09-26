@@ -395,18 +395,35 @@ class Dtlp extends CI_Controller{
             $this->session->set_flashdata('warning', 'Data sudah ada');
             redirect('years');
         }else {*/
+            $username_assessor = $this->input->post('username_assessor');
+            $komentar_overall = $this->input->post('komentar_overall');
+            $tgl_terima = $this->input->post('tgl_terima');
+            for($n=1 ; $n <= 14 ; $n++){
+                $feedback_1[$n] = $this->input->post('feedback_1_'.$n);
+            }
+
+            for($n=1 ; $n <= 10 ; $n++){
+                $feedback_2[$n] = $this->input->post('feedback_2_'.$n);
+            }
+            for($n=1 ; $n <= 6 ; $n++){
+                $feedback_3[$n] = $this->input->post('feedback_3_'.$n);
+            }
+            for($n=1 ; $n <= 5 ; $n++){
+                $feedback_4[$n] = $this->input->post('feedback_4_'.$n);
+            }
             $data = array(
                 //'kode_penelitian' => $kode_penelitian,
-                'username_assessor' => $this->input->post('username_assessor'),
+                'username_assessor' => $username_assessor,
                 'wilayah' => $wilayah,
-                'komentar_1' => $this->input->post('komentar_1'),
+                /*'komentar_1' => $this->input->post('komentar_1'),
                 'komentar_2' => $this->input->post('komentar_2'),
                 'komentar_3' => $this->input->post('komentar_3'),
-                'komentar_4' => $this->input->post('komentar_4'),
-                'komentar_overall' => $this->input->post('komentar_overall'),
-                'tgl_terima' => $this->input->post('tgl_terima'),
+                'komentar_4' => $this->input->post('komentar_4'),*/
+                'komentar_overall' => $komentar_overall,
+                'tgl_terima' => $tgl_terima
             );
             $this->model->Simpan('penilaian', $data);
+            $this->model->GetPenilaian("where username_assessor = '$username_assessor' AND wilayah ='$wilayah' AND komentar_overall = '$komentar_overall' AND tgl_terima '$tgl_terima'");
             $data_notifikasi = array(
                 'state' => 0
             );
