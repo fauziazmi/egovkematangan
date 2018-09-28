@@ -53,7 +53,7 @@
                             <td><?php echo $no;?></td>
                             <td><?php echo $data['pertanyaan'];?></td>
                             <td><?php if ($data_dimensi1['jawaban_1_'.$no] != null ){ echo $data_dimensi1['jawaban_1_'.$no]; } else {echo '-';}?></td>
-                            <td><textarea class="form-control" name="komentar_1"></textarea></td>
+                            <td><textarea class="form-control" name="feedback_1_<?php echo $no ?>"></textarea></td>
                             <td><a href="<?php echo base_url('assets/pdf/'.$wilayah.'/'.$data_dimensi1['pdf_1_'.$no])?>" data-toggle="tooltip" data-placement ="top" title="lihat pdf" target="_blank"><span class="fa fa-file-pdf-o" style="font-size: 18pt;"> </span></a></td>                          
                         </tr>
                     <?php }?>
@@ -84,7 +84,7 @@
                             <td><?php echo $no;?></td>
                             <td><?php echo $data['variabel'];?></td>
                             <td><?php if ($data_dimensi2['jawaban_2_'.$no] != null ){ echo $data_dimensi2['jawaban_2_'.$no]; } else {echo '-';}?></td>
-                            <td><textarea class="form-control" name="komentar_2"></textarea></td>
+                            <td><textarea class="form-control" name="feedback_2_<?php echo $no ?>"></textarea></td>
                             <td><a href="<?php echo base_url('assets/pdf/'.$wilayah.'/'.$data_dimensi2['pdf_2_'.$no])?>" data-toggle="tooltip" data-placement ="top" title="lihat pdf" target="_blank"><span class="fa fa-file-pdf-o" style="font-size: 18pt;"> </span></a></td>                          
                         </tr>
                     <?php }?>
@@ -115,7 +115,7 @@
                             <td><?php echo $no;?></td>
                             <td><?php echo $data['pertanyaan'];?></td>
                             <td><?php if ($data_dimensi3['jawaban_3_'.$no] != null ){ echo $data_dimensi3['jawaban_3_'.$no]; } else {echo '-';}?></td>
-                            <td><textarea class="form-control" name="komentar_3"></textarea></td>
+                            <td><textarea class="form-control" name="feedback_3_<?php echo $no ?>"></textarea></td>
                             <td><a href="<?php echo base_url('assets/pdf/'.$wilayah.'/'.$data_dimensi3['pdf_3_'.$no])?>" data-toggle="tooltip" data-placement ="top" title="lihat pdf" target="_blank"><span class="fa fa-file-pdf-o" style="font-size: 18pt;"> </span></a></td>                          
                         </tr>
                     <?php }?>
@@ -146,7 +146,7 @@
                             <td><?php echo $no;?></td>
                             <td><?php echo $data['pertanyaan'];?></td>
                             <td><?php if ($data_dimensi4['jawaban_4_'.$no] != null ){ echo $data_dimensi4['jawaban_4_'.$no]; } else {echo '-';}?></td>
-                            <td><textarea class="form-control" name="komentar_4"></textarea></td>
+                            <td><textarea class="form-control" name="feedback_4_<?php echo $no ?>"></textarea></td>
                             <td><a href="<?php echo base_url('assets/pdf/'.$wilayah.'/'.$data_dimensi4['pdf_4_'.$no])?>" data-toggle="tooltip" data-placement ="top" title="lihat pdf" target="_blank"><span class="fa fa-file-pdf-o" style="font-size: 18pt;"> </span></a></td>                          
                         </tr>
                     <?php }?>

@@ -56,12 +56,9 @@
                         </div>
                     </div>
                 <?php } ?>
-                <div class="modal-header">
-                    <h4 class="modal-title" style="text-align:center;"><b>Petunjuk Umum</b></h4>
-                </div>
                 <div class="row">
                     <div class="col-sm-4"><h4 style="text-align:center;"><b>Pertanyaan</b></h4></div>
-                    <div class="col-sm-6"><h4 style="text-align:center;"><b>State of Development</b></h4></div>
+                    <div class="col-sm-6"><h4 style="text-align:center;"><b>Level Kematangan</b></h4></div>
                     <div class="col-sm-2"><h4 style="text-align:center;"><b>Bukti</b></h4></div>
                 </div>
                 <?php
@@ -92,9 +89,31 @@
                                 <div class="checkboxgroup">
                                     <label for="my_radio_button_id6">5</label><input type="radio" checked="" name="jawaban_1_<?php echo $no ?>" value="5">
                                 </div>
+                                <div class="checkboxgroup">
+                                    <a href="#info1_<?php echo $no ?>" data-toggle="modal"><i class="fa fa-info-circle" aria-hidden="true"></i></a>
+                                </div>
                             </div>
+                            <div id="info1_<?php echo $no ?>" class="modal fade">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                <h4>Penjelasan Indikator</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                    <label>Email</label>
+                                                    <label>Username</label>
+                                                    
+                                                    <label>Password Baru</label>
+                                                    
+                                                    <label>Ulangi Password</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                         </div>
                         <div class="col-sm-2">
+                        
                             <div class="form-group">
                                 <input type="file" name="pdf_1_<?php echo $no ?>">
                             </div>
@@ -111,7 +130,7 @@
             <div id="tab2" class="tab">
             <div class="row">
                     <div class="col-sm-4"><h4 style="text-align:center;"><b>Pertanyaan</b></h4></div>
-                    <div class="col-sm-6"><h4 style="text-align:center;"><b>State of Development</b></h4></div>
+                    <div class="col-sm-6"><h4 style="text-align:center;"><b>Level Kematangan</b></h4></div>
                     <div class="col-sm-2"><h4 style="text-align:center;"><b>Bukti</b></h4></div>
             </div>
             <?php  $no = 0; foreach ($data_pertanyaan_2 as $data){ $no++ ?>
@@ -140,8 +159,30 @@
                                 <div class="checkboxgroup">
                                     <label for="my_radio_button_id6">5</label><input type="radio" checked="" name="jawaban_2_<?php echo $no ?>" value="5">
                                 </div>
+                                <div class="checkboxgroup">
+                                    <a href="#info2_<?php echo $no ?>" data-toggle="modal" ><i class="fa fa-info-circle" aria-hidden="true"></i></a>
+                                </div>
                             </div>
+                            <div id="info2_<?php echo $no ?>" class="modal fade">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                <h4>Penjelasan Indikator</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                    <label>Email</label>
+                                                    <label>Username</label>
+                                                    
+                                                    <label>Password Baru</label>
+                                                    
+                                                    <label>Ulangi Password</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                         </div>
+                        
                         <div class="col-sm-2">
                             <input type="file" name="pdf_2_<?php echo $no ?>">
                         </div>
@@ -158,7 +199,7 @@
             <div id="tab3" class="tab">
             <div class="row">
                     <div class="col-sm-4"><h4 style="text-align:center;"><b>Pertanyaan</b></h4></div>
-                    <div class="col-sm-6"><h4 style="text-align:center;"><b>State of Development</b></h4></div>
+                    <div class="col-sm-6"><h4 style="text-align:center;"><b>Level Kematangan</b></h4></div>
                     <div class="col-sm-2"><h4 style="text-align:center;"><b>Bukti</b></h4></div>
             </div>
             <?php  $no = 0; foreach ($data_pertanyaan_3 as $data){ $no++ ?>
@@ -187,7 +228,34 @@
                                 <div class="checkboxgroup">
                                     <label for="my_radio_button_id6">5</label><input type="radio" checked="" name="jawaban_3_<?php echo $no ?>" value="5">
                                 </div>
+                                <div class="checkboxgroup">
+                                    <a href="#info3_<?php echo $no ?>" data-toggle="modal" ><i class="fa fa-info-circle" aria-hidden="true"></i></a>
+                                </div>
                             </div>
+                            <div id="info3_<?php echo $no ?>" class="modal fade">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                <h4>Penjelasan Indikator</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                            <table>
+                                                <tr>
+                                                    <th>Level</th>
+                                                    <th>Deskripsi</th>
+                                                </tr>
+                                                <?php for($i=0; $i<=5; $i++) {?>
+                                                <tr>
+                                                    <th>level <?php echo $i ?></th>
+                                                    <th><?php echo $data['level_'.$i]; ?></th>
+                                                </tr>
+                                                <?php }?>
+                                            </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                         </div>
                         <div class="col-sm-2">
                             <input type="file" name="pdf_3_<?php echo $no ?>">
@@ -206,7 +274,7 @@
             <div id="tab4" class="tab">
             <div class="row">
                     <div class="col-sm-4"><h4 style="text-align:center;"><b>Pertanyaan</b></h4></div>
-                    <div class="col-sm-6"><h4 style="text-align:center;"><b>State of Development</b></h4></div>
+                    <div class="col-sm-6"><h4 style="text-align:center;"><b>Level Kematangan</b></h4></div>
                     <div class="col-sm-2"><h4 style="text-align:center;"><b>Bukti</b></h4></div>
             </div>
             <?php   $no = 0; foreach ($data_pertanyaan_4 as $data){ $no++ ?>
@@ -235,7 +303,34 @@
                                 <div class="checkboxgroup">
                                     <label for="my_radio_button_id6">5</label><input type="radio" checked="" name="jawaban_4_<?php echo $no ?>" value="5">
                                 </div>
+                                <div class="checkboxgroup">
+                                    <a href="#info4_<?php echo $no ?>" data-toggle="modal" ><i class="fa fa-info-circle" aria-hidden="true"></i></a>
+                                </div>
                             </div>
+                            <div id="info4_<?php echo $no ?>" class="modal fade">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                <h4>Penjelasan Indikator</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                            <table class="table penelitian table-bordered table-striped">
+                                                <tr>
+                                                    <th width="20%"><h6>Level</h6></th>
+                                                    <th width="80%"><h6>Deskripsi</h6></th>
+                                                </tr>
+                                                <?php for($i=0; $i<=5; $i++) {?>
+                                                <tr>
+                                                    <th><h6>level <?php echo $i ?></h6></th>
+                                                    <th><h6><?php echo $data['level_'.$i]; ?></h6></th>
+                                                </tr>
+                                                <?php }?>
+                                            </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                         </div>
                         <div class="col-sm-2">
                             <div class="form-group">

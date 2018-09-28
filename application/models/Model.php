@@ -34,6 +34,23 @@ class Model extends CI_Model{
         return $this->db->query('select * from dimensi_4 '.$where);
     }
 
+    public function GetFeedback1($where =''){
+        return $this->db->query('select * from feedback_1 '.$where);
+    }
+
+    public function GetFeedback2($where =''){
+        return $this->db->query('select * from feedback_2 '.$where);
+    }
+
+    public function GetFeedback3($where =''){
+        return $this->db->query('select * from feedback_3 '.$where);
+    }
+
+    public function GetFeedback4($where =''){
+        return $this->db->query('select * from feedback_4 '.$where);
+    }
+
+
     public function GetTotDtlp($where = ''){
         return $this->db->query('select *, pendanaan.pendanaan_name, years.years_name from laporan LEFT JOIN pendanaan 
                   ON laporan.pendanaan = pendanaan.code_pendanaan LEFT JOIN years ON laporan.tahun_penelitian = years.code_years '.$where);
@@ -56,6 +73,10 @@ class Model extends CI_Model{
 
     public function GetPenilaian($where = ''){
         return $this->db->query('select * from penilaian '.$where);
+    }
+
+    public function GetID($where = ''){
+        return $this->db->insert_id();
     }
 
     public function LikeDtlp($jawaban_1,$jawaban_2,$jawaban_3,$jawaban_4){

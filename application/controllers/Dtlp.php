@@ -149,7 +149,8 @@ class Dtlp extends CI_Controller{
                 'aktif' => '1'
             );
             $this->model->Simpan('laporan', $data);
-            $data_laporan = $this->model->GetDtlp("where wilayah = '$wilayah' AND aktif = 1")->row_array();
+            $id_laporan = $this->model->GetID();
+            $data_laporan = $this->model->GetDtlp("where id = '$id_laporan' AND wilayah = '$wilayah' AND aktif = 1")->row_array();
             $data_dim1 = array(
                 'id_laporan' => $data_laporan['id'],
                 'jawaban_1_1' => $this->input->post('jawaban_1_1'),'jawaban_1_2' => $this->input->post('jawaban_1_2'),'jawaban_1_3' => $this->input->post('jawaban_1_3'),'jawaban_1_4' => $this->input->post('jawaban_1_4'),'jawaban_1_5' => $this->input->post('jawaban_1_5'),'jawaban_1_6' => $this->input->post('jawaban_1_6'),'jawaban_1_7' => $this->input->post('jawaban_1_7'),'jawaban_1_8' => $this->input->post('jawaban_1_8'),'jawaban_1_9' => $this->input->post('jawaban_1_9'),'jawaban_1_10' => $this->input->post('jawaban_1_10'),'jawaban_1_11' => $this->input->post('jawaban_1_11'),'jawaban_1_12' => $this->input->post('jawaban_1_12'),'jawaban_1_13' => $this->input->post('jawaban_1_13'),'jawaban_1_14' => $this->input->post('jawaban_1_14'),
@@ -422,8 +423,30 @@ class Dtlp extends CI_Controller{
                 'komentar_overall' => $komentar_overall,
                 'tgl_terima' => $tgl_terima
             );
+            
             $this->model->Simpan('penilaian', $data);
-            $this->model->GetPenilaian("where username_assessor = '$username_assessor' AND wilayah ='$wilayah' AND komentar_overall = '$komentar_overall' AND tgl_terima '$tgl_terima'");
+            $id_penilaian = $this->model->GetID();
+            //$data_penilaian = $this->model->GetPenilaian("where id_penilaian = '$id_penilaian'");
+            $data_feed1 = array(
+                'id_penilaian' => $id_penilaian,
+                'feedback_1_1' => $feedback_1[1],'feedback_1_2' => $feedback_1[2],'feedback_1_3' => $feedback_1[3],'feedback_1_4' => $feedback_1[4],'feedback_1_5' => $feedback_1[5],'feedback_1_6' => $feedback_1[6],'feedback_1_7' => $feedback_1[7],'feedback_1_8' => $feedback_1[8],'feedback_1_9' => $feedback_1[9],'feedback_1_10' => $feedback_1[10],'feedback_1_11' => $feedback_1[11],'feedback_1_12' => $feedback_1[12],'feedback_1_13' => $feedback_1[13],'feedback_1_14' => $feedback_1[14],
+            );
+            $this->model->Simpan('feedback_1', $data_feed1);
+            $data_feed2 = array(
+                'id_penilaian' => $id_penilaian,
+                'feedback_2_1' => $feedback_2[1],'feedback_2_2' => $feedback_2[2],'feedback_2_3' => $feedback_2[3],'feedback_2_4' => $feedback_2[4],'feedback_2_5' => $feedback_2[5],'feedback_2_6' => $feedback_2[6],'feedback_2_7' => $feedback_2[7],'feedback_2_8' => $feedback_2[8],'feedback_2_9' => $feedback_2[9],'feedback_2_10' => $feedback_2[10],
+            );
+            $this->model->Simpan('feedback_2', $data_feed2);
+            $data_feed3 = array(
+                'id_penilaian' => $id_penilaian,
+                'feedback_3_1' => $feedback_3[1],'feedback_3_2' => $feedback_3[2],'feedback_3_3' => $feedback_3[3],'feedback_3_4' => $feedback_3[4],'feedback_3_5' => $feedback_3[5],'feedback_3_6' => $feedback_3[6],
+            );
+            $this->model->Simpan('feedback_3', $data_feed3);
+            $data_feed4 = array(
+                'id_penilaian' => $id_penilaian,
+                'feedback_4_1' => $feedback_4[1],'feedback_4_2' => $feedback_4[2],'feedback_4_3' => $feedback_4[3],'feedback_4_4' => $feedback_4[4],'feedback_4_5' => $feedback_4[5],
+            );
+            $this->model->Simpan('feedback_4', $data_feed4);
             $data_notifikasi = array(
                 'state' => 0
             );
