@@ -57,7 +57,7 @@
                     </div>
                 <?php } ?>
                 <div class="row">
-                    <div class="col-sm-4"><h4 style="text-align:center;"><b>Pertanyaan</b></h4></div>
+                    <div class="col-sm-4"><h4 style="text-align:center;"><b>Pernyataan</b></h4></div>
                     <div class="col-sm-6"><h4 style="text-align:center;"><b>Level Kematangan</b></h4></div>
                     <div class="col-sm-2"><h4 style="text-align:center;"><b>Bukti</b></h4></div>
                 </div>
@@ -129,7 +129,7 @@
             
             <div id="tab2" class="tab">
             <div class="row">
-                    <div class="col-sm-4"><h4 style="text-align:center;"><b>Pertanyaan</b></h4></div>
+                    <div class="col-sm-4"><h4 style="text-align:center;"><b>Pernyataan</b></h4></div>
                     <div class="col-sm-6"><h4 style="text-align:center;"><b>Level Kematangan</b></h4></div>
                     <div class="col-sm-2"><h4 style="text-align:center;"><b>Bukti</b></h4></div>
             </div>
@@ -198,7 +198,7 @@
 
             <div id="tab3" class="tab">
             <div class="row">
-                    <div class="col-sm-4"><h4 style="text-align:center;"><b>Pertanyaan</b></h4></div>
+                    <div class="col-sm-4"><h4 style="text-align:center;"><b>Pernyataan</b></h4></div>
                     <div class="col-sm-6"><h4 style="text-align:center;"><b>Level Kematangan</b></h4></div>
                     <div class="col-sm-2"><h4 style="text-align:center;"><b>Bukti</b></h4></div>
             </div>
@@ -273,7 +273,7 @@
 
             <div id="tab4" class="tab">
             <div class="row">
-                    <div class="col-sm-4"><h4 style="text-align:center;"><b>Pertanyaan</b></h4></div>
+                    <div class="col-sm-4"><h4 style="text-align:center;"><b>Pernyataan</b></h4></div>
                     <div class="col-sm-6"><h4 style="text-align:center;"><b>Level Kematangan</b></h4></div>
                     <div class="col-sm-2"><h4 style="text-align:center;"><b>Bukti</b></h4></div>
             </div>
@@ -335,6 +335,7 @@
                         <div class="col-sm-2">
                             <div class="form-group">
                                 <input type="file" name="pdf_4_<?php echo $no ?>">
+                                <h6 style="color:gray"><i>dibuktikan dengan gambar bisnis proses</i></h6>
                             </div>
                         </div>
                     </div>

@@ -77,13 +77,13 @@
                                                 <div class="modal-body">
                                                 <table class="table penelitian table-bordered table-striped">
                                                     <tr>
-                                                        <th width="20%"><h6>Level</h6></th>
+                                                        <th width="20%"><h6>Pertanyaan</h6></th>
                                                         <th width="80%"><h6>Deskripsi</h6></th>
                                                     </tr>
-                                                    <?php for($i=0; $i<=5; $i++) {?>
+                                                    <?php for($i=01; $i<=14; $i++) {?>
                                                     <tr>
-                                                        <th><h6>level <?php echo $i ?></h6></th>
-                                                        <th><h6><?php echo $i ?></h6></th>
+                                                        <th><h6>Pertanyaan <?php echo $i ?></h6></th>
+                                                        <th><h6><?php echo $data_feedback_1['feedback_1_1'] ?></h6></th>
                                                     </tr>
                                                     <?php }?>
                                                 </table>
