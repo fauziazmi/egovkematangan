@@ -78,12 +78,12 @@
                                                 <table class="table penelitian table-bordered table-striped">
                                                     <tr>
                                                         <th width="20%"><h6>Pertanyaan</h6></th>
-                                                        <th width="80%"><h6>Deskripsi</h6></th>
+                                                        <th width="80%"><h6>Ulasan</h6></th>
                                                     </tr>
-                                                    <?php for($i=01; $i<=14; $i++) {?>
+                                                    <?php for($i=1; $i<=14; $i++) {?>
                                                     <tr>
                                                         <th><h6>Pertanyaan <?php echo $i ?></h6></th>
-                                                        <th><h6><?php echo $data_feedback_1['feedback_1_'.$i] ?></h6></th>
+                                                        <th><h6><?php echo $data_feedback_1[1]['feedback_1_'.$i] ?></h6></th>
                                                     </tr>
                                                     <?php }?>
                                                 </table>

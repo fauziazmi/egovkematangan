@@ -6,19 +6,25 @@ class Feedback extends CI_Controller{
     public function index(){
         $wilayah = $this->session->userdata('ses_wilayah');
         $data_penilaian = $this->model->GetPenilaian(("where wilayah = '$wilayah' order by id_penilaian DESC"))->result_array();
-        $no = 0; foreach ($data_penilaian as $data){
-            $id_penilaian = $data['id_penilaian'];
-            $feedback1[$no] = $this->model->GetFeedback1(("where id_penilaian = 14"))->row_array();
-            $id_test = $feedback1[$no]['id_penilaian'];
-            // $no++;
+        //$id_penilaian_feedback1 = $this->model->GetFeedback1("where id_penilaian = 14")->row_array();
+        $no = 1; foreach ($data_penilaian as $data){
+            $id_penilaian[$no] = $data['id_penilaian'];
+            $feedback1[$no] = $this->model->GetFeedback1("where id_penilaian = '$id_penilaian[$no]'")->row_array();
+            $penilaian_id[$no] = $feedback1[$no]['id_penilaian'];
+            $no++;
         }
-      //$no--;
+        //$no = 0;
+        //$id_penilaian = $data_penilaian['id_penilaian'];
         $data = array(
             'ses_level' => $this->session->userdata('ses_level'),
             'data_laporan' => $data_penilaian,
-            'data_feedback_1' => $this->model->GetFeedback1(("where id_penilaian = '$id_test'"))->row_array(),
+            //'data_feedback_1' => $this->model->GetFeedback1(("where id_penilaian = '$penilaian_id[0]'"))->row_array(),
+            'data_feedback_1' => array(),
             'content' => 'feedback/feedback-list',
             );
+        for ($i = 1; $i <= 14 ; $i++) {
+            $data['data_feedback_1'][$i] = $feedback1[$i];
+        }
         $this->load->view('template/site', $data);
     }
 }
