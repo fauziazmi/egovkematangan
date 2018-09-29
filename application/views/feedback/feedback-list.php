@@ -72,7 +72,7 @@
                                             <div class="modal-content">
                                                 <div class="modal-header">
                                                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                                    <h4>Penjelasan Indikator</h4>
+                                                    <h4>Dimensi Sumber Daya</h4>
                                                 </div>
                                                 <div class="modal-body">
                                                 <table class="table penelitian table-bordered table-striped">
@@ -83,7 +83,7 @@
                                                     <?php for($i=1; $i<=14; $i++) {?>
                                                     <tr>
                                                         <th><h6>Pertanyaan <?php echo $i ?></h6></th>
-                                                        <th><h6><?php echo $data_feedback_1[1]['feedback_1_'.$i] ?></h6></th>
+                                                        <th><h6><?php echo $data_feedback_1[$no]['feedback_1_'.$i] ?></h6></th>
                                                     </tr>
                                                     <?php }?>
                                                 </table>
