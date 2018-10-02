@@ -63,9 +63,6 @@
                             <td><?php echo $data['tgl_terima'];?></td>
                             <td><?php echo $data['username_assessor'];?></td>
                             <td><?php echo $data['komentar_overall'];?></td>
-                            <td><?php echo $data['komentar_1'];?></td>
-                            <td><?php echo $data['komentar_2'];?></td>
-                            <td><?php echo $data['tgl_terima'];?></td>
                             <td><a href="#komentar_sumber_daya_<?php echo $no ?>" data-toggle="modal" ><span class="fa fa-info" style="font-size: 14pt;"> </span></a>
                                 <div id="komentar_sumber_daya_<?php echo $no ?>" class="modal fade">
                                         <div class="modal-dialog">
@@ -84,6 +81,84 @@
                                                     <tr>
                                                         <th><h6>Pertanyaan <?php echo $i ?></h6></th>
                                                         <th><h6><?php echo $data_feedback_1[$no]['feedback_1_'.$i] ?></h6></th>
+                                                    </tr>
+                                                    <?php }?>
+                                                </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                            </td>
+                            <td><a href="#komentar_pengungkit_<?php echo $no ?>" data-toggle="modal" ><span class="fa fa-info" style="font-size: 14pt;"> </span></a>
+                                <div id="komentar_pengungkit_<?php echo $no ?>" class="modal fade">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                    <h4>Dimensi Pengungkit</h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                <table class="table penelitian table-bordered table-striped">
+                                                    <tr>
+                                                        <th width="20%"><h6>Pertanyaan</h6></th>
+                                                        <th width="80%"><h6>Ulasan</h6></th>
+                                                    </tr>
+                                                    <?php for($i=1; $i<=10; $i++) {?>
+                                                    <tr>
+                                                        <th><h6>Pertanyaan <?php echo $i ?></h6></th>
+                                                        <th><h6><?php echo $data_feedback_2[$no]['feedback_2_'.$i] ?></h6></th>
+                                                    </tr>
+                                                    <?php }?>
+                                                </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                            </td>
+                            <td><a href="#komentar_nilai_<?php echo $no ?>" data-toggle="modal" ><span class="fa fa-info" style="font-size: 14pt;"> </span></a>
+                                <div id="komentar_nilai_<?php echo $no ?>" class="modal fade">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                    <h4>Dimensi Nilai</h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                <table class="table penelitian table-bordered table-striped">
+                                                    <tr>
+                                                        <th width="20%"><h6>Pertanyaan</h6></th>
+                                                        <th width="80%"><h6>Ulasan</h6></th>
+                                                    </tr>
+                                                    <?php for($i=1; $i<=6; $i++) {?>
+                                                    <tr>
+                                                        <th><h6>Pertanyaan <?php echo $i ?></h6></th>
+                                                        <th><h6><?php echo $data_feedback_3[$no]['feedback_3_'.$i] ?></h6></th>
+                                                    </tr>
+                                                    <?php }?>
+                                                </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                            </td>
+                            <td><a href="#komentar_dampak_<?php echo $no ?>" data-toggle="modal" ><span class="fa fa-info" style="font-size: 14pt;"> </span></a>
+                                <div id="komentar_dampak_<?php echo $no ?>" class="modal fade">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                    <h4>Dimensi Dampak</h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                <table class="table penelitian table-bordered table-striped">
+                                                    <tr>
+                                                        <th width="20%"><h6>Pertanyaan</h6></th>
+                                                        <th width="80%"><h6>Ulasan</h6></th>
+                                                    </tr>
+                                                    <?php for($i=1; $i<=5; $i++) {?>
+                                                    <tr>
+                                                        <th><h6>Pertanyaan <?php echo $i ?></h6></th>
+                                                        <th><h6><?php echo $data_feedback_4[$no]['feedback_4_'.$i] ?></h6></th>
                                                     </tr>
                                                     <?php }?>
                                                 </table>
