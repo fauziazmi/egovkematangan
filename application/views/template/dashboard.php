@@ -23,47 +23,16 @@ function drawVisualization() {
   data.addColumn('string', 'Provinsi');
     data.addColumn('number', 'Value');
     data.addRows([
-    ['Aceh', 1],
-    ['Bali', 2],
-    ['Bangka Belitung', 3],
-    ['Banten', 4],
-    ['Bengkulu', 5],
-    ['Gorontalo', 6],
-    ['Jambi', 7],
-    ['Jawa Barat', 8],
-    ['Jawa Tengah', 9],
-    ['Jawa Timur', 10],
-    ['Kalimantan Barat', 11],
-    ['Kalimantan Selatan', 12],
-    ['Kalimantan Tengah', 13],
-    ['Kalimantan Timur', 14],
-    ['Kalimantan Utara', 15],
-    ['ID-KR', 16],
-    ['Lampung', 17],
-    ['ID-MA', 18],
-    ['Maluku Utara', 19],
-    ['Nusa Tenggara Barat', 20],
-    ['Nusa Tenggara Timur', 21],
-    ['Papua', 22],
-    ['ID-PB', 23],
-    ['Riau', 24],
-    ['Sulawesi Barat', 25],
-    ['Sulawesi Selatan', 26],
-    ['Sulawesi Tengah', 27],
-    ['Sulawesi Utara', 28],
-    ['Sulawesi Tenggara', 34],
-    ['Sumatera Barat', 29],
-    ['Sumatera Selatan', 30],
-    ['Sumatera Utara', 31],
-    ['Daerah Khusus Ibukota Jakarta', 32],
-    ['Daerah Istimewa Yogyakarta', 33]
+    <?php foreach ($data_laporan as $data){ ?>
+    ['<?php echo $data['wilayah'];?>', <?php echo $data['Nilai'];?>],<?php } ?>
+    ['ID-JK', 3],
  ]);
 
   var opts = {
     region: 'ID',
     displayMode: 'regions',
-    resolution: 'provinces',
-    colorAxis: {colors: ['#e31b23', 'black', '#00853f']},
+    resolution:  'provinces',
+    colorAxis: { minValue : 0, maxValue : 5, colors: ['white', 'maroon', 'red', '#9ACD32', '#32CD32' , 'green']},
           backgroundColor: '#81d4fa',
           datalessRegionColor: '#f8bbd0',
           defaultColor: '#f5f5f5',
@@ -122,3 +91,41 @@ Kegiatan yang dibuka Asisten Bidang Pemerintahan Sekda Provinsi Papua Doren Wake
         </div>
 <?php } ?>    
 </div>
+
+<?php /*
+    ['Aceh', 1],
+    ['Bali', 2],
+    ['Bangka Belitung', 3],
+    ['Banten', 4],
+    ['Bengkulu', 5],
+    ['Gorontalo', 0],
+    ['Jambi', 1],
+    ['Jawa Barat', 2],
+    ['Jawa Tengah', 3],
+    ['Jawa Timur', 4],
+    ['Kalimantan Barat', 5],
+    ['Kalimantan Selatan', 0],
+    ['Kalimantan Tengah', 1],
+    ['Kalimantan Timur', 2],
+    ['Kalimantan Utara', 3],
+    ['ID-KR', 4],
+    ['Lampung', 5],
+    ['ID-MA', 0],
+    ['Maluku Utara', 1],
+    ['Nusa Tenggara Barat', 2],
+    ['Nusa Tenggara Timur', 3],
+    ['Papua', 4],
+    ['ID-PB', 5],
+    ['Riau', 0],
+    ['Sulawesi Barat', 1],
+    ['Sulawesi Selatan', 2],
+    ['Sulawesi Tengah', 3],
+    ['Sulawesi Utara', 4],
+    ['Sulawesi Tenggara', 5],
+    ['Sumatera Barat', 0],
+    ['Sumatera Selatan', 1],
+    ['Sumatera Utara', 2],
+    ['Daerah Khusus Ibukota Jakarta', 3],
+    ['Daerah Istimewa Yogyakarta', 4]*/
+
+    ?>

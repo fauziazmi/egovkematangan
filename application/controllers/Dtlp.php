@@ -128,6 +128,7 @@ class Dtlp extends CI_Controller{
                 $jawaban4 = $jawaban_4[$n] + $jawaban4;
             }
             $jawaban4 = $jawaban4/5;
+            $nilai = ($jawaban1 + $jawaban2 + $jawaban3 + $jawaban4)/4;
             /*if($jawaban_1 == 'yes') $nilai_1 = 1; else 0; 
             if($jawaban_2 == 'yes') $nilai_2 = 1; else 0; 
             if($jawaban_3 == 'yes') $nilai_3 = 1; else 0; 
@@ -139,7 +140,7 @@ class Dtlp extends CI_Controller{
                 'jawaban_2' => $jawaban2,
                 'jawaban_3' => $jawaban3,
                 'jawaban_4' => $jawaban4,
-                //'nilai' => $nilai,
+                'nilai' => $nilai,
                 'wilayah' => $this->input->post('wilayah'),
                 'tgl_terima' => $this->input->post('tgl_terima'),
                 /*'pdf_1' => $pdf_1,
