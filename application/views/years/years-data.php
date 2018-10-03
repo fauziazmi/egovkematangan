@@ -1,6 +1,140 @@
 <?php
     $ses_level = $this->session->userdata('ses_pekerjaan');
 ?>
+<script>
+google.charts.load('current', {packages: ['corechart', 'bar']});
+google.charts.setOnLoadCallback(drawBasic);
+google.charts.setOnLoadCallback(drawBasic2);
+google.charts.setOnLoadCallback(drawBasic3);
+google.charts.setOnLoadCallback(drawBasic4);
+google.charts.setOnLoadCallback(drawBasic5);
+function drawBasic() {
+
+      var data = google.visualization.arrayToDataTable([
+        ['Provinsi', 'nilai dimensi sumber daya e-gov Maturity',],
+        <?php foreach ($data_laporan as $data){ ?>
+    ['<?php echo $data['wilayah'];?>', <?php echo $data['jawaban_1'];?>],<?php } ?>
+      ]);
+
+      var options = {
+        title: 'Nilai dimensi sumber daya e-gov Maturity',
+        chartArea: {height: '70%'},
+        hAxis: {
+          title: 'Provinsi',
+        },
+        vAxis: {
+          title: 'Nilai dimensi sumber daya e-gov Maturity',
+          minValue: 0,
+          maxValue: 5,
+        }
+      };
+
+      var chart = new google.visualization.ColumnChart(document.getElementById('chart_sumber_daya'));
+
+      chart.draw(data, options);
+    }
+
+function drawBasic2() {
+
+      var data = google.visualization.arrayToDataTable([
+        ['Provinsi', 'nilai dimensi pengungkit e-gov Maturity',],
+        <?php foreach ($data_laporan as $data){ ?>
+    ['<?php echo $data['wilayah'];?>', <?php echo $data['jawaban_2'];?>],<?php } ?>
+      ]);
+
+      var options = {
+        title: 'Nilai dimensi pengungkit e-gov Maturity',
+        chartArea: {width: '70%'},
+        hAxis: {
+          title: 'Provinsi',
+        },
+        vAxis: {
+          title: 'Nilai dimensi pengungkit e-gov Maturity',
+        }
+      };
+
+      var chart = new google.visualization.ColumnChart(document.getElementById('chart_pengungkit'));
+
+      chart.draw(data, options);
+    }
+
+function drawBasic3() {
+
+      var data = google.visualization.arrayToDataTable([
+        ['Provinsi', 'nilai dimensi nilai e-gov Maturity',],
+        <?php foreach ($data_laporan as $data){ ?>
+    ['<?php echo $data['wilayah'];?>', <?php echo $data['jawaban_3'];?>],<?php } ?>
+      ]);
+
+      var options = {
+        title: 'Nilai dimensi nilai e-gov Maturity',
+        chartArea: {width: '70%'},
+        hAxis: {
+          title: 'Provinsi',
+        },
+        vAxis: {
+          title: 'Nilai dimensi nilai e-gov Maturity',
+          minValue: 0,
+          maxValue: 5,
+        }
+      };
+
+      var chart = new google.visualization.ColumnChart(document.getElementById('chart_nilai'));
+
+      chart.draw(data, options);
+    }
+function drawBasic4() {
+
+      var data = google.visualization.arrayToDataTable([
+        ['Provinsi', 'nilai dimensi dampak e-gov Maturity',],
+        <?php foreach ($data_laporan as $data){ ?>
+    ['<?php echo $data['wilayah'];?>', <?php echo $data['jawaban_4'];?>],<?php } ?>
+      ]);
+
+      var options = {
+        title: 'Nilai dimensi dampak e-gov Maturity',
+        chartArea: {width: '70%'},
+        hAxis: {
+          title: 'Provinsi',
+        },
+        vAxis: {
+          title: 'Nilai dimensi dampak e-gov Maturity',
+          minValue: 0,
+          maxValue: 5,
+        }
+      };
+
+      var chart = new google.visualization.ColumnChart(document.getElementById('chart_dampak'));
+
+      chart.draw(data, options);
+    }
+
+function drawBasic5() {
+
+      var data = google.visualization.arrayToDataTable([
+        ['Provinsi', 'Rata-rata 4 dimensi e-gov Maturity',],
+        <?php foreach ($data_laporan as $data){ ?>
+    ['<?php echo $data['wilayah'];?>', <?php echo $data['Nilai'];?>],<?php } ?>
+      ]);
+
+      var options = {
+        title: 'Rata-rata 4 dimensi e-gov Maturity',
+        chartArea: {width: '70%'},
+        hAxis: {
+          title: 'Provinsi',
+        },
+        vAxis: {
+          title: 'Rata-rata 4 dimensi e-gov Maturity',
+          minValue: 0,
+          maxValue: 5,
+        }
+      };
+
+      var chart = new google.visualization.ColumnChart(document.getElementById('chart_rata'));
+
+      chart.draw(data, options);
+    }
+</script>
 <div class="page-header">
     <h2>Data e-gov maturity wilayah</h2>
 </div>
@@ -119,4 +253,33 @@
             </div>
         </div>
     <?php } ?>
+    <div class="col-sm-7 col-md-7">
+            <div class="panel panel-default" id="histogram">
+                <div class="panel-heading">
+                    Histogram
+                    <a href="#widget3" data-toggle="collapse"><span class="fa fa-chevron-down" style="float: right"></span>
+                    </a>
+                </div>
+                
+                <div id="widget3" class="panel-body collapse in">
+                <h3>Dimensi</h3>
+                <ul class="nav nav-tabs">
+                        <!-- Untuk Semua Tab.. pastikan a href=”#nama_id” sama dengan nama id di “Tap Pane” dibawah-->
+                        <li class="active"><a href="#sumber_daya" data-toggle="tab">Sumber Daya</a></li> <!-- Untuk Tab pertama berikan li class=”active” agar pertama kali halaman di load tab langsung active-->
+                        <li><a href="#pengungkit" data-toggle="tab">Pengungkit</a></li>
+                        <li><a href="#nilai" data-toggle="tab">Nilai</a></li>
+                        <li><a href="#dampak" data-toggle="tab">Dampak</a></li>
+                        <li><a href="#rata" data-toggle="tab">rata-rata 4 Dimensi</a></li>
+                        </ul>
+                        <!-- Tab panes, ini content dari tab di atas -->
+                        <div class="tab-content">
+                        <div class="tab-pane active" id="sumber_daya"><div id="chart_sumber_daya" style="width:100%; height: 500px;"></div></div><!-- Untuk Tab pertama berikan div class=”active” agar pertama kali halaman di load content langsung active-->
+                        <div class="tab-pane" id="pengungkit"><div id="chart_pengungkit" style="height: 500px;"></div></div>
+                        <div class="tab-pane" id="nilai"><div id="chart_nilai" style="height: 500px;"></div></div>
+                        <div class="tab-pane" id="dampak"><div id="chart_dampak" style="height: 500px;"></div></div>
+                        <div class="tab-pane" id="rata"><div id="chart_rata" style="height: 500px;"></div></div>
+</div>       
+                </div>
+            </div>
+    </div>
 </div>
