@@ -17,10 +17,14 @@ function drawBasic() {
       ]);
 
       var options = {
-        title: 'Nilai dimensi sumber daya e-gov Maturity',
-        chartArea: {height: '70%'},
+        chartArea: {height: '70%', top: 50, bottom: 160},
+        height: 500,
+        width: 1200,
+        legend: {position:'top'},
         hAxis: {
-          title: 'Provinsi',
+          viewWindowMode: 'pretty', 
+          slantedText: true,
+          slantedTextAngle: 90
         },
         vAxis: {
           title: 'Nilai dimensi sumber daya e-gov Maturity',
@@ -43,13 +47,20 @@ function drawBasic2() {
       ]);
 
       var options = {
-        title: 'Nilai dimensi pengungkit e-gov Maturity',
-        chartArea: {width: '70%'},
+        chartArea: {width:'70%', top: 50, bottom: 160},
+        height: 500,
+        width: 1200,
+        legend: {
+            position:'top',},
         hAxis: {
-          title: 'Provinsi',
+          top: 0,
+          slantedText: true,
+          slantedTextAngle: 90
         },
         vAxis: {
           title: 'Nilai dimensi pengungkit e-gov Maturity',
+          minValue: 0,
+          maxValue: 5,
         }
       };
 
@@ -67,10 +78,16 @@ function drawBasic3() {
       ]);
 
       var options = {
-        title: 'Nilai dimensi nilai e-gov Maturity',
-        chartArea: {width: '70%'},
+        chartArea: {width: '70%', top: 50, bottom: 160},
+        height: 500,
+        width: 1200,
+        legend: {position:'top'},
         hAxis: {
-          title: 'Provinsi',
+          top: 10,
+          count: -1, 
+          viewWindowMode: 'pretty', 
+          slantedText: true,
+          slantedTextAngle: 90
         },
         vAxis: {
           title: 'Nilai dimensi nilai e-gov Maturity',
@@ -92,10 +109,16 @@ function drawBasic4() {
       ]);
 
       var options = {
-        title: 'Nilai dimensi dampak e-gov Maturity',
-        chartArea: {width: '70%'},
+        chartArea: {width: '70%', top: 50, bottom: 160},
+        height: 500,
+        width: 1200,
+        legend: {position:'top'},
         hAxis: {
-          title: 'Provinsi',
+          top: 10,
+          count: -1, 
+          viewWindowMode: 'pretty', 
+          slantedText: true,
+          slantedTextAngle: 90
         },
         vAxis: {
           title: 'Nilai dimensi dampak e-gov Maturity',
@@ -118,10 +141,16 @@ function drawBasic5() {
       ]);
 
       var options = {
-        title: 'Rata-rata 4 dimensi e-gov Maturity',
-        chartArea: {width: '70%'},
+        chartArea: {width: '70%', top: 50, bottom: 160},
+        height: 500,
+        width: 1200,
+        legend: {position:'top'},
         hAxis: {
-          title: 'Provinsi',
+          top: 10,
+          count: -1, 
+          viewWindowMode: 'pretty', 
+          slantedText: true,
+          slantedTextAngle: 90
         },
         vAxis: {
           title: 'Rata-rata 4 dimensi e-gov Maturity',
@@ -273,11 +302,11 @@ function drawBasic5() {
                         </ul>
                         <!-- Tab panes, ini content dari tab di atas -->
                         <div class="tab-content">
-                        <div class="tab-pane active" id="sumber_daya"><div id="chart_sumber_daya" style="width:100%; height: 500px;"></div></div><!-- Untuk Tab pertama berikan div class=”active” agar pertama kali halaman di load content langsung active-->
-                        <div class="tab-pane" id="pengungkit"><div id="chart_pengungkit" style="height: 500px;"></div></div>
-                        <div class="tab-pane" id="nilai"><div id="chart_nilai" style="height: 500px;"></div></div>
-                        <div class="tab-pane" id="dampak"><div id="chart_dampak" style="height: 500px;"></div></div>
-                        <div class="tab-pane" id="rata"><div id="chart_rata" style="height: 500px;"></div></div>
+                        <div class="tab-pane active" id="sumber_daya"><h6 align="center"><b>Nilai dimensi sumber daya e-gov Maturity</b></h6><div id="chart_sumber_daya" style="width:100%; height: 500px;"></div><h6 align="center"><i>Provinsi</i></h6></div><!-- Untuk Tab pertama berikan div class=”active” agar pertama kali halaman di load content langsung active-->
+                        <div class="tab-pane" id="pengungkit"><h6 align="center"><b>Nilai dimensi pengungkit e-gov Maturity</b></h6><div id="chart_pengungkit" style="width:100%; height: 500px;"></div><h6 align="center"><i>Provinsi</i></h6></div>
+                        <div class="tab-pane" id="nilai"><h6 align="center"><b>Nilai dimensi Nilai e-gov Maturity</b></h6><div id="chart_nilai" style="height: 500px;margin-top: 0px;"></div><h6 align="center"><i>Provinsi</i></h6></div>
+                        <div class="tab-pane" id="dampak"><h6 align="center"><b>Nilai dimensi Dampak e-gov Maturity</b></h6><div id="chart_dampak" style="height: 500px;margin-top: 0px;"></div><h6 align="center"><i>Provinsi</i></h6></div>
+                        <div class="tab-pane" id="rata"><h6 align="center"><b>Rata-rata nilai 4 dimensi e-gov Maturity</b></h6><div id="chart_rata" style="height: 500px;margin-top: 0px;"></div><h6 align="center"><i>Provinsi</i></h6></div>
 </div>       
                 </div>
             </div>
