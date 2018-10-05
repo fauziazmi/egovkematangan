@@ -41,8 +41,8 @@
                     <thead>
                     <tr>
                         <th width="4%">NO</th>
-                        <th width="40%">Pertanyaan</th>
-                        <th width="10%">Jawaban</th>
+                        <th width="40%">Pernyataan</th>
+                        <th width="10%">Level Kematangan</th>
                         <th width="40%">Feedback</th>
                         <th width="6%">Bukti</th>
                     </tr>
@@ -72,8 +72,8 @@
                     <thead>
                     <tr>
                         <th width="4%">NO</th>
-                        <th width="40%">Pertanyaan</th>
-                        <th width="10%">Jawaban</th>
+                        <th width="40%">Pernyataan</th>
+                        <th width="10%">Level Kematangan</th>
                         <th width="40%">Feedback</th>
                         <th width="6%">Bukti</th>
                     </tr>
@@ -103,8 +103,8 @@
                     <thead>
                     <tr>
                         <th width="4%">NO</th>
-                        <th width="40%">Pertanyaan</th>
-                        <th width="10%">Jawaban</th>
+                        <th width="40%">Pernyataan</th>
+                        <th width="10%">Level Kematangan</th>
                         <th width="40%">Feedback</th>
                         <th width="6%">Bukti</th>
                     </tr>
@@ -134,8 +134,8 @@
                     <thead>
                     <tr>
                         <th width="4%">NO</th>
-                        <th width="40%">Pertanyaan</th>
-                        <th width="10%">Jawaban</th>
+                        <th width="40%">Pernyataan</th>
+                        <th width="10%">Level Kematangan</th>
                         <th width="40%">Feedback</th>
                         <th width="6%">Bukti</th>
                     </tr>

@@ -49,7 +49,7 @@ $ses_level = $this->session->userdata('ses_pekerjaan');
     <p class="notif" align="center" > Anda mendapatkan Feedback terbaru, harap mengupdate <a href="<?php echo site_url('dtlp');?>"><b> Form</b></a> kembali </p> <?php }} ?>
 <div id="visualization" style="width: 100%; height: 433px;" align="center"></div>
 <div class="col-md-12">
-<?php if ($ses_level == 'Pemda'){?>
+<?php if ($ses_level == 'Pemda' || 'Assessor'){?>
 <div class="col-lg-8 col-md-8">
 <?php } ?>
 <h3 style="text-align:center">Berita</h3>
@@ -66,7 +66,7 @@ Kegiatan yang dibuka Asisten Bidang Pemerintahan Sekda Provinsi Papua Doren Wake
 <h6 class="isi"> GUBERNUR Daerah Khusus Ibukota (DKI) Jakarta Anies Baswedan berusaha menanggapi cecaran pertanyaan awak media mengenai sejumlah isu yang berkembang di media sosial. Dari mulai revitalisasi pedestrian di Jalan Sudirman dan Jalan MH Thamrin yang menyisakan tanya mengapa ada jarak pemisah rumput dari halte bis dengan perhentian, tidak terawatnya Kalijodo dan penutupan Kali Item menggunakan waring. Darimana awal mula isu-isu itu muncul, tidak lain dan tidak bukan dari medsos....<a href="#" style="color:blue">Selengkapnya</a></h6>
 <?php if ($ses_level == 'Pemda'){?></div><?php } ?>
 </div>
-<?php if ($ses_level == 'Pemda'){?>
+<?php if ($ses_level == 'Pemda' ){?>
         <div class="col-lg-4 col-md-8" align="center" style="margin-top:20px">
             <div class="panel panel-info">
                 <div class="panel-heading">
@@ -91,7 +91,30 @@ Kegiatan yang dibuka Asisten Bidang Pemerintahan Sekda Provinsi Papua Doren Wake
         </div>
 <?php } ?>    
 </div>
-
+<?php if ($ses_level == 'Assessor' ){?>
+        <div class="col-lg-4 col-md-8" align="center" style="margin-top:20px">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-4">
+                            <i class="fa fa-bell fa-5x"></i>
+                        </div>
+                        <div class="col-xs-8 text-right">
+                            <div class="huge"><?php echo $total_laporan;?></div>
+                            <div> Laporan</div>
+                        </div>
+                    </div>
+                </div>
+                <a href="#">
+                    <div class="panel-footer">
+                        <a href="<?php echo site_url('laporan');?>" class="pull-left">View Details</a>
+                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                        <div class="clearfix"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+<?php } ?> 
 <?php /*
     ['Aceh', 1],
     ['Bali', 2],

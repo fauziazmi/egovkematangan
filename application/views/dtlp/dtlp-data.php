@@ -101,12 +101,18 @@
                                                 <h4>Penjelasan Indikator</h4>
                                             </div>
                                             <div class="modal-body">
-                                                    <label>Email</label>
-                                                    <label>Username</label>
-                                                    
-                                                    <label>Password Baru</label>
-                                                    
-                                                    <label>Ulangi Password</label>
+                                            <table class="table penelitian table-bordered table-striped">
+                                                <tr>
+                                                    <th width="20%"><h6>Level</h6></th>
+                                                    <th width="80%"><h6>Deskripsi</h6></th>
+                                                </tr>
+                                                <?php for($i=0; $i<=5; $i++) {?>
+                                                <tr>
+                                                    <th><h6>level <?php echo $i ?></h6></th>
+                                                    <th><h6><?php echo $data['level_'.$i]; ?></h6></th>
+                                                </tr>
+                                                <?php }?>
+                                            </table>
                                             </div>
                                         </div>
                                     </div>
@@ -171,12 +177,18 @@
                                                 <h4>Penjelasan Indikator</h4>
                                             </div>
                                             <div class="modal-body">
-                                                    <label>Email</label>
-                                                    <label>Username</label>
-                                                    
-                                                    <label>Password Baru</label>
-                                                    
-                                                    <label>Ulangi Password</label>
+                                            <table class="table penelitian table-bordered table-striped">
+                                                <tr>
+                                                    <th width="20%"><h6>Level</h6></th>
+                                                    <th width="80%"><h6>Deskripsi</h6></th>
+                                                </tr>
+                                                <?php for($i=0; $i<=5; $i++) {?>
+                                                <tr>
+                                                    <th><h6>level <?php echo $i ?></h6></th>
+                                                    <th><h6><?php echo $data['level_'.$i]; ?></h6></th>
+                                                </tr>
+                                                <?php }?>
+                                            </table>
                                             </div>
                                         </div>
                                     </div>
@@ -240,15 +252,15 @@
                                                 <h4>Penjelasan Indikator</h4>
                                             </div>
                                             <div class="modal-body">
-                                            <table>
+                                            <table class="table penelitian table-bordered table-striped">
                                                 <tr>
-                                                    <th>Level</th>
-                                                    <th>Deskripsi</th>
+                                                    <th width="20%"><h6>Level</h6></th>
+                                                    <th width="80%"><h6>Deskripsi</h6></th>
                                                 </tr>
                                                 <?php for($i=0; $i<=5; $i++) {?>
                                                 <tr>
-                                                    <th>level <?php echo $i ?></th>
-                                                    <th><?php echo $data['level_'.$i]; ?></th>
+                                                    <th><h6>level <?php echo $i ?></h6></th>
+                                                    <th><h6><?php echo $data['level_'.$i]; ?></h6></th>
                                                 </tr>
                                                 <?php }?>
                                             </table>

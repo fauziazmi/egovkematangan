@@ -23,6 +23,7 @@ class Dashboard extends CI_Controller{
             'total_years' => $this->model->GetYears()->num_rows(),
             'total_pendanaan' => $this->model->GetPendanaan()->num_rows(),
             'total_penilaian' => $this->model->GetPenilaian(("where wilayah = '$wilayah'"))->num_rows(),
+            'total_laporan' => $this->model->GetDtlp()->num_rows(),
             'state_notifikasi' => $data_notifikasi['state'],
             'data_laporan' => $this->model->GetDtlp("where aktif = 1 order by wilayah asc")->result_array(),
             'content' => 'template/dashboard',
