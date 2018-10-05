@@ -63,7 +63,7 @@
                             <td><?php echo $data['tgl_terima'];?></td>
                             <td><?php echo $data['username_assessor'];?></td>
                             <td><?php echo $data['komentar_overall'];?></td>
-                            <td><a href="#komentar_sumber_daya_<?php echo $no ?>" data-toggle="modal" ><span class="fa fa-info" style="font-size: 14pt;"> </span></a>
+                            <td align="center"><a href="#komentar_sumber_daya_<?php echo $no ?>" data-toggle="modal" ><button class="btn btn-primary">Lihat</button></a>
                                 <div id="komentar_sumber_daya_<?php echo $no ?>" class="modal fade">
                                         <div class="modal-dialog">
                                             <div class="modal-content">
@@ -89,7 +89,7 @@
                                         </div>
                                     </div>
                             </td>
-                            <td><a href="#komentar_pengungkit_<?php echo $no ?>" data-toggle="modal" ><span class="fa fa-info" style="font-size: 14pt;"> </span></a>
+                            <td align="center"><a href="#komentar_pengungkit_<?php echo $no ?>" data-toggle="modal" ><button class="btn btn-success">Lihat</button></a>
                                 <div id="komentar_pengungkit_<?php echo $no ?>" class="modal fade">
                                         <div class="modal-dialog">
                                             <div class="modal-content">
@@ -115,7 +115,7 @@
                                         </div>
                                     </div>
                             </td>
-                            <td><a href="#komentar_nilai_<?php echo $no ?>" data-toggle="modal" ><span class="fa fa-info" style="font-size: 14pt;"> </span></a>
+                            <td align="center"><a href="#komentar_nilai_<?php echo $no ?>" data-toggle="modal" ><button class="btn btn-info">Lihat</button></a>
                                 <div id="komentar_nilai_<?php echo $no ?>" class="modal fade">
                                         <div class="modal-dialog">
                                             <div class="modal-content">
@@ -141,7 +141,7 @@
                                         </div>
                                     </div>
                             </td>
-                            <td><a href="#komentar_dampak_<?php echo $no ?>" data-toggle="modal" ><span class="fa fa-info" style="font-size: 14pt;"> </span></a>
+                            <td align="center"><a href="#komentar_dampak_<?php echo $no ?>" data-toggle="modal" ><button class="btn btn-warning">Lihat</button></a>
                                 <div id="komentar_dampak_<?php echo $no ?>" class="modal fade">
                                         <div class="modal-dialog">
                                             <div class="modal-content">

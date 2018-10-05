@@ -5,7 +5,7 @@ class Laporan extends CI_Controller{
 
     public function index(){
         $wilayah = $this->session->userdata('ses_wilayah');
-        $data_laporan = $this->model->GetDtlp("order by id DESC")->result_array();
+        $data_laporan = $this->model->GetDtlp("order by id DESC")->result_array(); 
         //$id_laporan_feedback1 = $this->model->GetFeedback1("where id_laporan = 14")->row_array();
         $no = 1; foreach ($data_laporan as $data){
             $id_laporan[$no] = $data['id'];
@@ -16,6 +16,7 @@ class Laporan extends CI_Controller{
             //$penilaian_id[$no] = $feedback1[$no]['id_laporan'];
             $no++;
         }
+        
         //$no = 0;
         //$id_laporan = $data_penilaian['id_laporan'];
         $data = array(

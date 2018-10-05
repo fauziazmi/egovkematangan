@@ -47,6 +47,8 @@ $ses_level = $this->session->userdata('ses_pekerjaan');
 ?>
 <?php if ($ses_level == 'Pemda'){ if($state_notifikasi == 0 && $total_penilaian > 0) { ?>
     <p class="notif" align="center" > Anda mendapatkan Feedback terbaru, harap mengupdate <a href="<?php echo site_url('dtlp');?>"><b> Form</b></a> kembali </p> <?php }} ?>
+    <?php if ($ses_level == 'Assessor'){ if($data_laporan_hari_ini > 0) { ?>
+    <p class="notif" align="center" > Anda mendapatkan <b> <?php echo $data_laporan_hari_ini ?> </b> laporan terbaru hari ini harap mengecek <a href="<?php echo site_url('laporan');?>"><b> laporan</b></a></p> <?php }} ?>
 <div id="visualization" style="width: 100%; height: 433px;" align="center"></div>
 <div class="col-md-12">
 <?php if ($ses_level == 'Pemda' || 'Assessor'){?>
