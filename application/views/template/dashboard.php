@@ -32,7 +32,7 @@ function drawVisualization() {
     region: 'ID',
     displayMode: 'regions',
     resolution:  'provinces',
-    colorAxis: { minValue : 0, maxValue : 5, colors: ['white', 'maroon', 'red', '#9ACD32', '#32CD32' , 'green']},
+    colorAxis: { minValue : 0, maxValue : 4, colors: ['white', 'maroon', 'red', '#9ACD32', '#32CD32' , 'green']},
           backgroundColor: '#81d4fa',
           datalessRegionColor: '#f8bbd0',
           defaultColor: '#f5f5f5',

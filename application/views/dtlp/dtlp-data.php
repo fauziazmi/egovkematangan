@@ -86,9 +86,7 @@
                                 <div class="checkboxgroup">
                                     <label for="my_radio_button_id5">4</label><input type="radio" checked="" name="jawaban_1_<?php echo $no ?>" value="4">
                                 </div>
-                                <div class="checkboxgroup">
-                                    <label for="my_radio_button_id6">5</label><input type="radio" checked="" name="jawaban_1_<?php echo $no ?>" value="5">
-                                </div>
+                                
                                 <div class="checkboxgroup">
                                     <a href="#info1_<?php echo $no ?>" data-toggle="modal"><i class="fa fa-info-circle" aria-hidden="true"></i></a>
                                 </div>
@@ -106,7 +104,7 @@
                                                     <th width="20%"><h6>Level</h6></th>
                                                     <th width="80%"><h6>Deskripsi</h6></th>
                                                 </tr>
-                                                <?php for($i=0; $i<=5; $i++) {?>
+                                                <?php for($i=0; $i<=4; $i++) {?>
                                                 <tr>
                                                     <th><h6>level <?php echo $i ?></h6></th>
                                                     <th><h6><?php echo $data['level_'.$i]; ?></h6></th>
@@ -162,9 +160,7 @@
                                 <div class="checkboxgroup">
                                     <label for="my_radio_button_id5">4</label><input type="radio" checked="" name="jawaban_2_<?php echo $no ?>" value="4">
                                 </div>
-                                <div class="checkboxgroup">
-                                    <label for="my_radio_button_id6">5</label><input type="radio" checked="" name="jawaban_2_<?php echo $no ?>" value="5">
-                                </div>
+                                
                                 <div class="checkboxgroup">
                                     <a href="#info2_<?php echo $no ?>" data-toggle="modal" ><i class="fa fa-info-circle" aria-hidden="true"></i></a>
                                 </div>
@@ -182,7 +178,7 @@
                                                     <th width="20%"><h6>Level</h6></th>
                                                     <th width="80%"><h6>Deskripsi</h6></th>
                                                 </tr>
-                                                <?php for($i=0; $i<=5; $i++) {?>
+                                                <?php for($i=0; $i<=4; $i++) {?>
                                                 <tr>
                                                     <th><h6>level <?php echo $i ?></h6></th>
                                                     <th><h6><?php echo $data['level_'.$i]; ?></h6></th>
@@ -237,9 +233,7 @@
                                 <div class="checkboxgroup">
                                     <label for="my_radio_button_id5">4</label><input type="radio" checked="" name="jawaban_3_<?php echo $no ?>" value="4">
                                 </div>
-                                <div class="checkboxgroup">
-                                    <label for="my_radio_button_id6">5</label><input type="radio" checked="" name="jawaban_3_<?php echo $no ?>" value="5">
-                                </div>
+                                
                                 <div class="checkboxgroup">
                                     <a href="#info3_<?php echo $no ?>" data-toggle="modal" ><i class="fa fa-info-circle" aria-hidden="true"></i></a>
                                 </div>
@@ -257,7 +251,7 @@
                                                     <th width="20%"><h6>Level</h6></th>
                                                     <th width="80%"><h6>Deskripsi</h6></th>
                                                 </tr>
-                                                <?php for($i=0; $i<=5; $i++) {?>
+                                                <?php for($i=0; $i<=4; $i++) {?>
                                                 <tr>
                                                     <th><h6>level <?php echo $i ?></h6></th>
                                                     <th><h6><?php echo $data['level_'.$i]; ?></h6></th>
@@ -312,9 +306,7 @@
                                 <div class="checkboxgroup">
                                     <label for="my_radio_button_id5">4</label><input type="radio" checked="" name="jawaban_4_<?php echo $no ?>" value="4">
                                 </div>
-                                <div class="checkboxgroup">
-                                    <label for="my_radio_button_id6">5</label><input type="radio" checked="" name="jawaban_4_<?php echo $no ?>" value="5">
-                                </div>
+                                
                                 <div class="checkboxgroup">
                                     <a href="#info4_<?php echo $no ?>" data-toggle="modal" ><i class="fa fa-info-circle" aria-hidden="true"></i></a>
                                 </div>
@@ -332,7 +324,7 @@
                                                     <th width="20%"><h6>Level</h6></th>
                                                     <th width="80%"><h6>Deskripsi</h6></th>
                                                 </tr>
-                                                <?php for($i=0; $i<=5; $i++) {?>
+                                                <?php for($i=0; $i<=4; $i++) {?>
                                                 <tr>
                                                     <th><h6>level <?php echo $i ?></h6></th>
                                                     <th><h6><?php echo $data['level_'.$i]; ?></h6></th>

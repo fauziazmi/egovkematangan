@@ -179,23 +179,26 @@ function drawBasic5() {
                 <table id="table" class="table penelitian table-bordered table-striped" width="100%">
                     <thead>
                     <tr>
-                        <th width="4%">NO</th>
-                        <th width="10%">WILAYAH</th>
-                        <th width="10%">NILAI DIMENSI 1</th>
-                        <th width="10%">NILAI DIMENSI 2</th>
-                        <th width="10%">NILAI DIMENSI 3</th>
-                        <th width="10%">NILAI DIMENSI 4</th>
-                        <th width="10%">NILAI</th>
-                        <th width="16%">TANGGAL TERIMA</th>
+                        <th width="4%" rowspan="2">NO</th>
+                        <th width="10%" rowspan="2">WILAYAH</th>
+                        <th width="40%" colspan="4" style="text-align:center">DIMENSI</th>
+                        <th width="10%" rowspan="2">NILAI RATA RATA</th>
+                        <th width="16%" rowspan="2">TANGGAL TERIMA</th>
                         <?php if ($ses_level == 'Assessor') {?>
-                        <th width="10%">PDF</th> 
+                        <th width="10%" rowspan="2">PDF</th> 
                         <?php }?>
                         <?php if ($ses_level != 'Assessor') {?>
-                        <th width="20%"> PDF</th>
+                        <th width="20%" rowspan="2"> PDF</th>
                         <?php ;}?>
                         <?php if ($ses_level == 'Assessor'){?><li>
-                        <th width="10%" class="text-center">Opsi<br></th>
+                        <th width="10%" class="text-center" rowspan="2">Opsi<br></th>
                         <?php } ?>
+                    </tr>
+                    <tr>
+                        <th width="10%">SUMBER DAYA</th>
+                        <th width="10%">PENGUNGKIT</th>
+                        <th width="10%">NILAI</th>
+                        <th width="10%">DAMPAK</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -216,7 +219,7 @@ function drawBasic5() {
                                 <td class="text-center">
                                     <a href="<?php echo base_url()?>dtlp/kirim_email/<?php echo $data['id'];?>" data-toggle="tooltip" data-placement ="top" title="Komentar" target="_blank"><span class="fa fa-commenting-o" style="font-size: 14pt;"> </span></a>                                 
                                     <a href="<?php echo base_url()?>dtlp/detail_data/<?php echo $data['id'];?>" data-toggle="tooltip" data-placement ="top" title="detail"><span class="glyphicon glyphicon-check" style="font-size: 14pt"></span></a>
-                                    <a href="<?php echo base_url()?>dtlp/export_excel/<?php echo $data['wilayah'];?>" data-toggle="tooltip" data-placement ="top" title="excel"><span class="fa fa-file-excel-o" style="font-size: 14pt"></span></a>
+                                    <a href="<?php echo base_url()?>dtlp/export_excel/<?php echo $data['id'];?>" data-toggle="tooltip" data-placement ="top" title="excel"><span class="fa fa-file-excel-o" style="font-size: 14pt"></span></a>
                                     <a href="<?php echo base_url()?>dtlp/hapus_data/<?php echo $data['id'];?>" onclick="return confirm('Yakin data dihapus')" data-toggle="tooltip" data-placement ="top" title="hapus"><span class="glyphicon glyphicon-trash" style="font-size: 12pt"></span></a>
                                 </td>
                             <?php } ?>
@@ -302,11 +305,11 @@ function drawBasic5() {
                         </ul>
                         <!-- Tab panes, ini content dari tab di atas -->
                         <div class="tab-content">
-                        <div class="tab-pane active" id="sumber_daya"><h6 align="center"><b>Nilai dimensi sumber daya e-gov Maturity</b></h6><div id="chart_sumber_daya" style="width:100%; height: 500px;"></div><h6 align="center"><i>Provinsi</i></h6></div><!-- Untuk Tab pertama berikan div class=”active” agar pertama kali halaman di load content langsung active-->
-                        <div class="tab-pane" id="pengungkit"><h6 align="center"><b>Nilai dimensi pengungkit e-gov Maturity</b></h6><div id="chart_pengungkit" style="width:100%; height: 500px;"></div><h6 align="center"><i>Provinsi</i></h6></div>
-                        <div class="tab-pane" id="nilai"><h6 align="center"><b>Nilai dimensi Nilai e-gov Maturity</b></h6><div id="chart_nilai" style="height: 500px;margin-top: 0px;"></div><h6 align="center"><i>Provinsi</i></h6></div>
-                        <div class="tab-pane" id="dampak"><h6 align="center"><b>Nilai dimensi Dampak e-gov Maturity</b></h6><div id="chart_dampak" style="height: 500px;margin-top: 0px;"></div><h6 align="center"><i>Provinsi</i></h6></div>
-                        <div class="tab-pane" id="rata"><h6 align="center"><b>Rata-rata nilai 4 dimensi e-gov Maturity</b></h6><div id="chart_rata" style="height: 500px;margin-top: 0px;"></div><h6 align="center"><i>Provinsi</i></h6></div>
+                        <div class="tab-pane active" id="sumber_daya"><h6 align="center"><b>Nilai dimensi sumber daya e-gov Maturity</b></h6><div id="chart_sumber_daya" style="width:100%; height: 500px;"></div><h6 align="center"><i>Provinsi</i></h6><h6 style="margin-left:200px"><i>* Skala nilai 0-4</i></h6></div><!-- Untuk Tab pertama berikan div class=”active” agar pertama kali halaman di load content langsung active-->
+                        <div class="tab-pane" id="pengungkit"><h6 align="center"><b>Nilai dimensi pengungkit e-gov Maturity</b></h6><div id="chart_pengungkit" style="width:100%; height: 500px;"></div><h6 align="center"><i>Provinsi</i></h6><h6 style="margin-left:200px"><i>* Skala nilai 0-4</i></h6></div>
+                        <div class="tab-pane" id="nilai"><h6 align="center"><b>Nilai dimensi Nilai e-gov Maturity</b></h6><div id="chart_nilai" style="height: 500px;margin-top: 0px;"></div><h6 align="center"><i>Provinsi</i></h6><h6 style="margin-left:200px"><i>* Skala nilai 0-4</i></h6></div>
+                        <div class="tab-pane" id="dampak"><h6 align="center"><b>Nilai dimensi Dampak e-gov Maturity</b></h6><div id="chart_dampak" style="height: 500px;margin-top: 0px;"></div><h6 align="center"><i>Provinsi</i></h6><h6 style="margin-left:200px"><i>* Skala nilai 0-4</i></h6></div>
+                        <div class="tab-pane" id="rata"><h6 align="center"><b>Rata-rata nilai 4 dimensi e-gov Maturity</b></h6><div id="chart_rata" style="height: 500px;margin-top: 0px;"></div><h6 align="center"><i>Provinsi</i></h6><h6 style="margin-left:200px"><i>* Skala nilai 0-4</i></h6></div>
 </div>       
                 </div>
             </div>

@@ -329,13 +329,12 @@ class Dtlp extends CI_Controller{
         $this->load->view('template/site',$data);
     }
 
-    public function export_excel($wilayah = 1){
+    public function export_excel($id = 1){
         $this->cek_pengunjung();
-        $data_laporan = $this->model->GetDtlp("where wilayah = '$wilayah'")->result_array();
-        //$result = $this->model->LikeDtlp($kode_penelitian,$npj,$tahun_penelitian,$pendanaan)->result_array();
         $data = array(
             'title' => 'Data Laporan Pemda',
-            'data_laporan' => $data_laporan,
+            'data_laporan' => $this->model->GetDtlp("where id = '$id'")->row_array(),
+            'data_dimensi_1' => $this->model->GetDimensi1("where id_laporan = '$id'")->row_array(),
         );
         $this->load->view('dtlp/dtlp-report-excel',$data);
     }
