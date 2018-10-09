@@ -7,6 +7,34 @@
     display:block;
 }
 </style>
+<script>
+    $(function(){
+    $('#nexttab').click(function(){
+        $('li.active').next().addClass('active');
+        $('li.active').prev().removeClass('active');
+    });
+    $('#nexttab2').click(function(){
+        $('li.active').next().addClass('active');
+        $('li.active').prev().removeClass('active');
+    });
+    $('#nexttab3').click(function(){
+        $('li.active').next().addClass('active');
+        $('li.active').prev().removeClass('active');
+    });
+    $('#prevtab2').click(function(){
+        $('li.active').prev().addClass('active');
+        $('li.active').next().removeClass('active');
+    });
+    $('#prevtab3').click(function(){
+        $('li.active').prev().addClass('active');
+        $('li.active').next().removeClass('active');
+    });
+    $('#prevtab4').click(function(){
+        $('li.active').prev().addClass('active');
+        $('li.active').next().removeClass('active');
+    });
+});
+</script>
 <link href="<?php echo base_url('assets/css/dtlp-style.css');?>" rel="stylesheet" >
 <?php $ses_wilayah = $this->session->userdata('ses_wilayah'); ?>
 <div class="page-header" style="margin-left:45px;">
@@ -18,11 +46,11 @@
         <h4 class="modal-title" style="text-align: center"><b>Dimensi egov Maturity</b></h4>
     <div class="tabs" style="margin-top:20px">
     <ul class="tab-links">
-		    <li class="active"><a href="#tab1">Sumber Daya</a></li>
-		    <li><a href="#tab2">Pengungkit</a></li>
-		    <li><a href="#tab3">Nilai</a></li>
-		    <li><a href="#tab4">Dampak</a></li>
-	    </ul>
+		    <li class="active"><a data-toggle="tab" href="#tab1">Sumber Daya</a></li>
+		    <li><a data-toggle="tab" href="#tab2" >Pengungkit</a></li>
+		    <li><a data-toggle="tab" href="#tab3">Nilai</a></li>
+		    <li><a data-toggle="tab" href="#tab4">Dampak</a></li>
+        </ul>
 	    <div class="tab-content">
             <form action="<?php echo site_url('dtlp/simpan_data')?>" enctype="multipart/form-data" method="post">
             <div id="tab1" class="tab active">
@@ -66,11 +94,11 @@
                         ?>
                     <div class="row">
                     <div class="modal-body">
-                        <div class="form-group">                            
-                            <p style="color:black;" class="col-sm-4"><?php echo $data['pertanyaan'];?> <br><font color="grey"><i><?php echo $data['bukti'];?></i></font></p>
+                        <div class="form-group" style="margin-top:0px;margin-bottom:0px;">                            
+                            <p style="color:black;" class="col-sm-4"><?php echo $data['pertanyaan'];?></p>
                         </div>
                         <div class="col-sm-6" align="center">
-                            <div id="checkboxes">
+                            <div id="checkboxes" >
                                 <div class="checkboxgroup">    
                                     <label for="my_radio_button_id1">0</label><input type="radio" checked="" name="jawaban_1_<?php echo $no ?>" value="0">                
                                 </div>
@@ -117,7 +145,6 @@
                                 </div>
                         </div>
                         <div class="col-sm-2">
-                        
                             <div class="form-group">
                                 <input type="file" name="pdf_1_<?php echo $no ?>">
                             </div>
@@ -126,11 +153,10 @@
                     </div>
                     <div class="modal-footer" style="margin-top:5px"></div>
                     <?php }?>
-                    <div align="right">
-                    <a href="#tab2" class="next" >Next &raquo;</a>
+                    <div class="tab-links" align=right>
+                        <a href="#tab2" class="next" style="background-color:#3CB371;margin-right:30px;color: white;" id="nexttab">Next &raquo;</a>
                     </div>
-            </div>
-            
+                </div>
             <div id="tab2" class="tab">
             <div class="row">
                     <div class="col-sm-4"><h4 style="text-align:center;"><b>Pernyataan</b></h4></div>
@@ -140,7 +166,7 @@
             <?php  $no = 0; foreach ($data_pertanyaan_2 as $data){ $no++ ?>
                 <div class="row">
                     <div class="modal-body">
-                        <div class="form-group">                            
+                        <div class="form-group" style="margin-top:0px;margin-bottom:0px;">                            
                             <p style="color:black;" class="col-sm-4"><?php echo $data['pertanyaan'];?></p>
                         </div>
                         <div class="col-sm-6" align="center">
@@ -198,9 +224,9 @@
                 </div>
                     <div class="modal-footer" style="margin-top:5px"></div>
                 <?php }?>
-                <div align="center">
-                    <a href="#tab1" class="previous">&laquo; Previous</a>
-                    <a href="#tab3" class="next">Next &raquo;</a>
+                <div class="tab-links" align="center">
+                    <a href="#tab1" class="previous" style="background-color:gray;color: white;" id="prevtab2">&laquo; Previous</a>
+                    <a href="#tab3" class="next" style="background-color:#3CB371;color: white;" id="nexttab2">Next &raquo;</a>
                 </div>
             </div>
 
@@ -213,8 +239,8 @@
             <?php  $no = 0; foreach ($data_pertanyaan_3 as $data){ $no++ ?>
                 <div class="row">
                     <div class="modal-body">
-                        <div class="form-group">
-                            <p style="color:black;" class="col-sm-4"><?php echo $data['pertanyaan'];?> <br><font color="grey"><i><?php echo $data['bukti'];?></i></font></p>
+                        <div class="form-group" style="margin-top:0px;margin-bottom:0px;">
+                            <p style="color:black;" class="col-sm-4"><?php echo $data['pertanyaan'];?></p>
                         </div>
                         <div class="col-sm-6" align="center">    
                         <div id="checkboxes">
@@ -271,9 +297,9 @@
                 
                     <div class="modal-footer" style="margin-top:5px"></div>
                 <?php }?>
-                    <div align="center">
-                        <a href="#tab2" class="previous">&laquo; Previous</a>
-                        <a href="#tab4" class="next">Next &raquo;</a>
+                    <div class="tab-links" align="center">
+                        <a href="#tab2" class="previous" style="background-color:gray;color: white;" data-toggle="tab" id="prevtab3">&laquo; Previous</a>
+                        <a href="#tab4" class="next" style="background-color:#3CB371;color: white;" data-toggle="tab" id="nexttab3">Next &raquo;</a>
                     </div>
             </div>
 
@@ -286,7 +312,7 @@
             <?php   $no = 0; foreach ($data_pertanyaan_4 as $data){ $no++ ?>
                 <div class="row">
                     <div class="modal-body">
-                        <div class="form-group">
+                        <div class="form-group" style="margin-top:0px;margin-bottom:0px;">
                             <p style="color:black;" class="col-sm-4"><?php echo $data['pertanyaan'];?></p>
                         </div>
                         <div class="col-sm-6" align="center">
@@ -339,15 +365,14 @@
                         <div class="col-sm-2">
                             <div class="form-group">
                                 <input type="file" name="pdf_4_<?php echo $no ?>">
-                                <h6 style="color:gray"><i>dibuktikan dengan gambar bisnis proses</i></h6>
                             </div>
                         </div>
                     </div>
                 </div>
                     <div class="modal-footer" style="margin-top:5px"></div>
                 <?php }?>
-                    <div align="left">
-                        <a href="#tab3" class="previous">&laquo; Previous</a>
+                    <div class="tab-links" align="left">
+                        <a href="#tab3" class="previous" style="background-color:gray;color: white;" data-toggle="tab" id="prevtab4">&laquo; Previous</a>
                     </div>
                     <div align="center">
                     <button type="reset" class="btn btn-danger">Reset</button>
