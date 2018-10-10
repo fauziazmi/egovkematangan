@@ -19,7 +19,7 @@ function drawBasic() {
       var options = {
         chartArea: {height: '70%', top: 50, bottom: 160},
         height: 500,
-        width: 1200,
+        width: 1300,
         legend: {position:'top'},
         hAxis: {
           viewWindowMode: 'pretty', 
@@ -49,7 +49,7 @@ function drawBasic2() {
       var options = {
         chartArea: {width:'70%', top: 50, bottom: 160},
         height: 500,
-        width: 1200,
+        width: 1300,
         legend: {
             position:'top',},
         hAxis: {
@@ -80,7 +80,7 @@ function drawBasic3() {
       var options = {
         chartArea: {width: '70%', top: 50, bottom: 160},
         height: 500,
-        width: 1200,
+        width: 1300,
         legend: {position:'top'},
         hAxis: {
           top: 10,
@@ -111,7 +111,7 @@ function drawBasic4() {
       var options = {
         chartArea: {width: '70%', top: 50, bottom: 160},
         height: 500,
-        width: 1200,
+        width: 1300,
         legend: {position:'top'},
         hAxis: {
           top: 10,
@@ -143,7 +143,7 @@ function drawBasic5() {
       var options = {
         chartArea: {width: '70%', top: 50, bottom: 160},
         height: 500,
-        width: 1200,
+        width: 1300,
         legend: {position:'top'},
         hAxis: {
           top: 10,
@@ -214,13 +214,13 @@ function drawBasic5() {
                             <td><?php echo $data['jawaban_4'];?></td>
                             <td><?php echo $data['Nilai'];?></td>
                             <td><?php echo $data['tgl_terima'];?></td>
-                            <td><a href="<?php echo base_url('assets/pdf/'.$data['wilayah'].'/'.$data['pdf_1'])?>" data-toggle="tooltip" data-placement ="top" title="lihat pdf" target="_blank"><span class="fa fa-file-pdf-o" style="font-size: 14pt;"> </span></a></td>
+                            <td><a href="<?php echo base_url()?>dtlp/export_pdf/<?php echo $data['id'];?>" data-toggle="tooltip" data-placement ="top" title="lihat pdf" target="_blank"><span class="fa fa-file-pdf-o" style="font-size: 14pt;"> </span></a></td>
                             <?php if ($ses_level == 'Assessor'){?>
                                 <td class="text-center">
                                     <a href="<?php echo base_url()?>dtlp/kirim_email/<?php echo $data['id'];?>" data-toggle="tooltip" data-placement ="top" title="Komentar" target="_blank"><span class="fa fa-commenting-o" style="font-size: 14pt;"> </span></a>                                 
                                     <a href="<?php echo base_url()?>dtlp/detail_data/<?php echo $data['id'];?>" data-toggle="tooltip" data-placement ="top" title="detail"><span class="glyphicon glyphicon-check" style="font-size: 14pt"></span></a>
                                     <a href="<?php echo base_url()?>dtlp/export_excel/<?php echo $data['id'];?>" data-toggle="tooltip" data-placement ="top" title="excel"><span class="fa fa-file-excel-o" style="font-size: 14pt"></span></a>
-                                    <a href="<?php echo base_url()?>dtlp/hapus_data/<?php echo $data['id'];?>" onclick="return confirm('Yakin data dihapus')" data-toggle="tooltip" data-placement ="top" title="hapus"><span class="glyphicon glyphicon-trash" style="font-size: 12pt"></span></a>
+                                    <!-- <a href="<?php echo base_url()?>dtlp/hapus_data/<?php echo $data['id'];?>" onclick="return confirm('Yakin data dihapus')" data-toggle="tooltip" data-placement ="top" title="hapus"><span class="glyphicon glyphicon-trash" style="font-size: 12pt"></span></a> -->
                                 </td>
                             <?php } ?>
                         </tr>
@@ -230,8 +230,8 @@ function drawBasic5() {
             </div>
         </div>
     </div>
-    <?php if ($ses_level != 'Pengunjung'){?>
-        <div class="col-sm-5 col-md-5">
+    <?php if ($ses_level == 'Pengunjung'){?>
+        <div class="col-sm-3 col-md-3">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     Filtur Report Laporan Pemda
@@ -285,7 +285,7 @@ function drawBasic5() {
             </div>
         </div>
     <?php } ?>
-    <div class="col-sm-7 col-md-7">
+    <div class="col-sm-12 col-md-12">
             <div class="panel panel-default" id="histogram">
                 <div class="panel-heading">
                     Histogram

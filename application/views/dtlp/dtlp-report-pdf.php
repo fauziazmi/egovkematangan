@@ -29,36 +29,35 @@
     </style>
 </head>
 <body onload="window.print()">
-<h2>Data Laporan Pemda
+<h2><?php echo $title;?>
 </h2>
 <table align="center">
     <thead>
     <tr>
-        <th align="center">No</th>
-        <th>Wilayah</th>
-        <th>Jawaban 1</th>
-        <th>Jawaban 2</th>
-        <th>Jawaban 3</th>
-        <th>Jawaban 4</th>
+        <th rowspan="2">No</th>
+        <th rowspan="2">Wilayah</th>
+        <th colspan="4" style="text-align:center">Dimensi</th>
+        <th rowspan="2">Nilai Rata-rata</th>
+        <th rowspan="2">Tanggal Terima</th>
+    </tr>
+    <tr>
+        <th>Sumber Daya</th>
+        <th>Pengungkit</th>
         <th>Nilai</th>
-        <th>Tanggal Terima</th>
-        <th>Pdf</th>
+        <th>Dampak</th>
     </tr>
     </thead>
     <tbody>
-    <?php $i=1; foreach($data_laporan as $data) { ?>
         <tr>
-            <td align="center"><?php echo $i; ?></td>
-            <td><?php echo $data['wilayah']; ?></td>
-            <td><?php echo $data['jawaban_1']; ?></td>
-            <td><?php echo $data['jawaban_2']; ?></td>
-            <td><?php echo $data['jawaban_3']; ?></td>
-            <td><?php echo $data['jawaban_4']; ?></td>
-            <td><?php echo $data['Nilai']; ?></td>
-            <td><?php echo $data['tgl_terima']; ?></td>
-            <td><?php echo $data['pdf']; ?></td>
+            <td>1</td>
+            <td><?php echo $data_laporan['wilayah']; ?></td>
+            <td><?php echo $data_laporan['jawaban_1']; ?></td>
+            <td><?php echo $data_laporan['jawaban_2']; ?></td>
+            <td><?php echo $data_laporan['jawaban_3']; ?></td>
+            <td><?php echo $data_laporan['jawaban_4']; ?></td>
+            <td><?php echo $data_laporan['Nilai']; ?></td>
+            <td><?php echo $data_laporan['tgl_terima']; ?></td>
         </tr>
-        <?php $i++; } ?>
     </tbody>
 </table>
 </body>

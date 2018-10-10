@@ -6,7 +6,7 @@ class Dtlp extends CI_Controller{
     public function __construct()
     {
         parent::__construct();
-        $this->cek_login();
+        //$this->cek_login();
         $this->load->helper(array('form','url'));
         $this->load->library('form_validation');
     }
@@ -335,6 +335,9 @@ class Dtlp extends CI_Controller{
             'title' => 'Data Laporan Pemda',
             'data_laporan' => $this->model->GetDtlp("where id = '$id'")->row_array(),
             'data_dimensi_1' => $this->model->GetDimensi1("where id_laporan = '$id'")->row_array(),
+            'data_dimensi_2' => $this->model->GetDimensi2("where id_laporan = '$id'")->row_array(),
+            'data_dimensi_3' => $this->model->GetDimensi3("where id_laporan = '$id'")->row_array(),
+            'data_dimensi_4' => $this->model->GetDimensi4("where id_laporan = '$id'")->row_array(),
         );
         $this->load->view('dtlp/dtlp-report-excel',$data);
     }
@@ -460,9 +463,9 @@ class Dtlp extends CI_Controller{
         //}
     }
 
-    public function export_pdf(){
-        $this->cek_pengunjung();
-        $kode_penelitian = $this->input->post('kode_penelitian');
+    public function export_pdf($id = 1){
+        //$this->cek_pengunjung();
+        /*$kode_penelitian = $this->input->post('kode_penelitian');
         $npj = $this->input->post('npj');
         $pendanaan = $this->input->post('pendanaan');
         $tahun_penelitian = $this->input->post('tahun_penelitian');
@@ -471,6 +474,12 @@ class Dtlp extends CI_Controller{
         $data = array(
             'title' => 'Data Laporan Penelitian',
             'data_laporan' => $result,
+        );*/
+        $data_laporan = $this->model->GetDtlp("where id = '$id'")->row_array();
+        ob_start();
+        $data = array(
+            'title' => 'Data Laporan Pemda '.$data_laporan['wilayah'].'',
+            'data_laporan' => $data_laporan,
         );
         $this->load->view('dtlp/dtlp-report-pdf', $data);
         $html = ob_get_clean();
@@ -478,7 +487,7 @@ class Dtlp extends CI_Controller{
         require_once ('./assets/html2pdf/html2pdf.class.php');
         $pdf = new HTML2PDF('P','A4','en');
         $pdf->WriteHTML($html);
-        $pdf->Output('Data Laporan Penelitian.pdf','D');
+        $pdf->Output('Data Laporan Pemda '.$data_laporan['wilayah'].'.pdf','D');
     }
 
     public function export_print(){
