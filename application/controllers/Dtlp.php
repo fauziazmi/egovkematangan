@@ -71,27 +71,39 @@ class Dtlp extends CI_Controller{
             $this->load->library('upload', $config);
             //$this->upload->do_upload('pdf_1');
             for($n = 1; $n <= 14; $n++){
-                $this->upload->do_upload('pdf_1_'.$n);
-                $upload_data = $this->upload->data();
+                $file_1[$n] = $this->upload->do_upload('pdf_1_'.$n);
+                    if($file_1[$n] != NULL) {
+                        $upload_data = $this->upload->data();
+                    }
                 $pdf1[$n] = $upload_data['file_name'];
+                $upload_data['file_name'] = '';
             }
 
             for($n = 1; $n <= 10; $n++){
-                $this->upload->do_upload('pdf_2_'.$n);
-                $upload_data = $this->upload->data();
+                $file_2[$n] = $this->upload->do_upload('pdf_2_'.$n);
+                if($file_2[$n] != NULL) {
+                        $upload_data = $this->upload->data();
+                    }
                 $pdf2[$n] = $upload_data['file_name'];
+                $upload_data['file_name'] = '';
             }
 
             for($n = 1; $n <= 6; $n++){
-                $this->upload->do_upload('pdf_3_'.$n);
-                $upload_data = $this->upload->data();
+                $file_3[$n] = $this->upload->do_upload('pdf_3_'.$n);
+                if($file_3[$n] != NULL) {
+                    $upload_data = $this->upload->data();
+                }
                 $pdf3[$n] = $upload_data['file_name'];
+                $upload_data['file_name'] = '';
             }
 
             for($n = 1; $n <= 5; $n++){
-                $this->upload->do_upload('pdf_4_'.$n);
-                $upload_data = $this->upload->data();
+                $file_4[$n] = $this->upload->do_upload('pdf_4_'.$n);
+                if($file_4[$n] != NULL) {
+                    $upload_data = $this->upload->data();
+                }
                 $pdf4[$n] = $upload_data['file_name'];
+                $upload_data['file_name'] = '';
             }
             //$this->upload->do_upload('pdf_2');
             /*$this->upload->do_upload('pdf_2_1');
