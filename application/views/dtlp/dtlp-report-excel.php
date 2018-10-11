@@ -36,14 +36,14 @@ header("Expires: 0");
         </tr>
     </tbody>
 </table>
-
+<br>
 <table border="1">
     <thead>
     <tr>
         <th colspan="15"><h2>Dimensi Sumber Daya</h2></th>
     </tr>
     <tr>
-        <th><?php $data_dimensi_1['id'] ?></th>
+        <th></th>
         <?php for($n = 1; $n <= 14; $n++){ ?>
             <th>pernyataan <?php echo $n ?> </th> <?php } ?>
     </tr>
@@ -52,11 +52,11 @@ header("Expires: 0");
     <?php for($i = 1;$i<=2;$i++) { ?>
         <tr>
             <?php if($i == 1) { ?> 
-            <td>Level Kematangan</td>
+            <td><b>Level Kematangan</b></td>
             <?php for($n = 1; $n <= 14; $n++){ ?>
             <td><?php echo $data_dimensi_1['jawaban_1_'.$n]; ?></td> 
             <?php }} if($i == 2) { ?>
-            <td>PDF</td>
+            <td><b>PDF</b></td>
             <?php for($n = 1; $n <= 14; $n++){ ?>
             <td><?php echo $data_dimensi_1['pdf_1_'.$n]; ?></td>
             <?php }} ?>
@@ -64,14 +64,14 @@ header("Expires: 0");
         <?php } ?>
     </tbody>
 </table>
-
+<br>
 <table border="1">
     <thead>
     <tr>
         <th colspan="11"><h2>Dimensi Pengungkit</h2></th>
     </tr>
     <tr>
-        <th><?php $data_dimensi_2['id'] ?></th>
+        <th></th>
         <?php for($n = 1; $n <= 10; $n++){ ?>
             <th>pernyataan <?php echo $n ?> </th> <?php } ?>
     </tr>
@@ -80,7 +80,7 @@ header("Expires: 0");
     <?php for($i = 1;$i<=2;$i++) { ?>
         <tr>
             <?php if($i == 1) { ?> 
-            <td>Level Kematangan</td>
+            <td><b>Level Kematangan</b></td>
             <?php for($n = 1; $n <= 10; $n++){ ?>
             <td><?php echo $data_dimensi_2['jawaban_2_'.$n]; ?></td> 
             <?php }} if($i == 2) { ?>
@@ -92,14 +92,14 @@ header("Expires: 0");
         <?php } ?>
     </tbody>
 </table>
-
+<br>
 <table border="1">
     <thead>
     <tr>
         <th colspan="7"><h2>Dimensi Nilai</h2></th>
     </tr>
     <tr>
-        <th><?php $data_dimensi_3['id'] ?></th>
+        <th></th>
         <?php for($n = 1; $n <= 6; $n++){ ?>
             <th>pernyataan <?php echo $n ?> </th> <?php } ?>
     </tr>
@@ -108,11 +108,11 @@ header("Expires: 0");
     <?php for($i = 1;$i<=2;$i++) { ?>
         <tr>
             <?php if($i == 1) { ?> 
-            <td>Level Kematangan</td>
+            <td><b>Level Kematangan</b></td>
             <?php for($n = 1; $n <= 6; $n++){ ?>
             <td><?php echo $data_dimensi_3['jawaban_3_'.$n]; ?></td> 
             <?php }} if($i == 2) { ?>
-            <td>PDF</td>
+            <td><b>PDF</b></td>
             <?php for($n = 1; $n <= 6; $n++){ ?>
             <td><?php echo $data_dimensi_3['pdf_3_'.$n]; ?></td>
             <?php }} ?>
@@ -120,14 +120,14 @@ header("Expires: 0");
         <?php } ?>
     </tbody>
 </table>
-
+<br>
 <table border="1">
     <thead>
     <tr>
         <th colspan="6"><h2>Dimensi Dampak</h2></th>
     </tr>
     <tr>
-        <th><?php $data_dimensi_4['id'] ?></th>
+        <th></th>
         <?php for($n = 1; $n <= 5; $n++){ ?>
             <th>pernyataan <?php echo $n ?> </th> <?php } ?>
     </tr>
@@ -136,11 +136,11 @@ header("Expires: 0");
     <?php for($i = 1;$i<=2;$i++) { ?>
         <tr>
             <?php if($i == 1) { ?> 
-            <td>Level Kematangan</td>
+            <td><b>Level Kematangan</b></td>
             <?php for($n = 1; $n <= 5; $n++){ ?>
             <td><?php echo $data_dimensi_4['jawaban_4_'.$n]; ?></td> 
             <?php }} if($i == 2) { ?>
-            <td>PDF</td>
+            <td><b>PDF</b></td>
             <?php for($n = 1; $n <= 5; $n++){ ?>
             <td><?php echo $data_dimensi_4['pdf_4_'.$n]; ?></td>
             <?php }} ?>

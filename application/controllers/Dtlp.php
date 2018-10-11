@@ -313,7 +313,7 @@ class Dtlp extends CI_Controller{
         }
         $data_laporan = $this->model->GetDtlp("where id = '$id' AND aktif = 1")->row_array();
         $data = array(
-            'wilayah' => $data_laporan['wilayah'],
+            /*'wilayah' => $data_laporan['wilayah'],
             'jawaban_1' => $data_laporan['jawaban_1'],
             'jawaban_2' => $data_laporan['jawaban_2'],
             'jawaban_3' => $data_laporan['jawaban_3'],
@@ -323,7 +323,13 @@ class Dtlp extends CI_Controller{
             'pdf_1' => $data_laporan['pdf_1'],
             'pdf_2' => $data_laporan['pdf_2'],
             'pdf_3' => $data_laporan['pdf_3'],
-            'pdf_4' => $data_laporan['pdf_4'],
+            'pdf_4' => $data_laporan['pdf_4'],*/
+            'title' => 'Data Laporan Pemda '.$data_laporan['wilayah'].'',
+            'data_laporan' => $data_laporan,
+            'data_dimensi_1' => $this->model->GetDimensi1("where id_laporan = '$id'")->row_array(),
+            'data_dimensi_2' => $this->model->GetDimensi2("where id_laporan = '$id'")->row_array(),
+            'data_dimensi_3' => $this->model->GetDimensi3("where id_laporan = '$id'")->row_array(),
+            'data_dimensi_4' => $this->model->GetDimensi4("where id_laporan = '$id'")->row_array(),
             'content' => 'dtlp/dtlp-detail',
         );
         $this->load->view('template/site',$data);

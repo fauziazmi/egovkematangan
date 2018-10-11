@@ -10,68 +10,149 @@
                 </a>
             </div>
             <div id="widget1" class="panel-body collapse in">
-                <div class="table-responsive">
-                    <table class="table">
-                        <tr>
-                            <th width="20%">Wilayah</th>
-                            <th width="3%">:</th>
-                            <th><?php if ($wilayah != null){echo $wilayah;}else {echo '-';}?></th>
-                        </tr>
-                        <tr>
-                            <th>Jawaban 1</th>
-                            <th>:</th>
-                            <th><?php if ($jawaban_1 != null ){ echo $jawaban_1; } else {echo '-';}?></th>
-                        </tr>
-                        <tr>
-                            <th>Jawaban 2</th>
-                            <th>:</th>
-                            <th><?php if ($jawaban_2 != null ){ echo $jawaban_2; } else { echo '-'; }?></th>
-                        </tr>
-                        <tr>
-                            <th>Jawaban 3</th>
-                            <th>:</th>
-                            <th><?php if ($jawaban_3 != null ){ echo $jawaban_3; } else{echo '-';}?></th>
-                        </tr>
-                        <tr>
-                            <th>Jawaban 4</th>
-                            <th>:</th>
-                            <th><?php if ($jawaban_4 != null ){ echo $jawaban_4; } else{echo '-';}?></th>
-                        </tr>
-                        <tr>
-                            <th>Nilai</th>
-                            <th>:</th>
-                            <th><?php if ($nilai != null ){ echo $nilai; } else{echo '-';}?></th>
-                        </tr>
-                        <tr>
-                            <th>Tanggal Terima</th>
-                            <th>:</th>
-                            <th><?php if ($tgl_terima != null ){ echo $tgl_terima; } else{echo '-';}?></th>
-                        </tr>
-                        <tr>
-                            <th>PDF 1</th>
-                            <th>:</th>
-                            <th><?php if ($pdf_1 != null ){ echo $pdf_1; echo "<a href='".base_url('assets/pdf/'.$wilayah.'/'.$pdf_1)."'style='color:blue'> Lihat PDF 1</a>";} else{echo '-';}?></th>
-                        </tr>
-                        <tr>
-                            <th>PDF 2</th>
-                            <th>:</th>
-                            <th><?php if ($pdf_2 != null ){ echo $pdf_2; echo "<a href='".base_url('assets/pdf/'.$wilayah.'/'.$pdf_2)."'style='color:blue'> Lihat PDF 2</a>";} else{echo '-';}?></th>
-                        </tr>
-                        <tr>
-                            <th>PDF 3</th>
-                            <th>:</th>
-                            <th><?php if ($pdf_3 != null ){ echo $pdf_3; echo "<a href='".base_url('assets/pdf/'.$wilayah.'/'.$pdf_3)."'style='color:blue'> Lihat PDF 3</a>";} else{echo '-';}?></th>
-                        </tr>
-                        <tr>
-                            <th>PDF 4</th>
-                            <th>:</th>
-                            <th><?php if ($pdf_4 != null ){ echo $pdf_4; echo "<a href='".base_url('assets/pdf/'.$wilayah.'/'.$pdf_4)."'style='color:blue'> Lihat PDF 4</a>";} else{echo '-';}?></th>
-                        </tr>
-                    </table>
-                    <a href="<?php echo base_url('assets/pdf/'.$wilayah.'/'.$pdf_1)?>"><button class="btn btn-danger"><span class="fa fa-file-pdf-o"></span> PDF 1</button></a>
-                    <a href="<?php echo base_url('assets/pdf/'.$wilayah.'/'.$pdf_2)?>"><button class="btn btn-danger"><span class="fa fa-file-pdf-o"></span> PDF 2</button></a>
-                    <a href="<?php echo base_url('assets/pdf/'.$wilayah.'/'.$pdf_3)?>"><button class="btn btn-danger"><span class="fa fa-file-pdf-o"></span> PDF 3</button></a>
-                    <a href="<?php echo base_url('assets/pdf/'.$wilayah.'/'.$pdf_4)?>"><button class="btn btn-danger"><span class="fa fa-file-pdf-o"></span> PDF 4</button></a>
+                <h2><?php echo $title;?></h2>
+                    <div class="table-responsive">   
+                        <table align="center" class="table">
+                            <thead>
+                            <tr>
+                                <th rowspan="2">No</th>
+                                <th rowspan="2">Wilayah</th>
+                                <th colspan="4" style="text-align:center">Dimensi</th>
+                                <th rowspan="2">Nilai Rata-rata</th>
+                                <th rowspan="2">Tanggal Terima</th>
+                            </tr>
+                            <tr>
+                                <th>Sumber Daya</th>
+                                <th>Pengungkit</th>
+                                <th>Nilai</th>
+                                <th>Dampak</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td><?php echo $data_laporan['wilayah']; ?></td>
+                                    <td><?php echo $data_laporan['jawaban_1']; ?></td>
+                                    <td><?php echo $data_laporan['jawaban_2']; ?></td>
+                                    <td><?php echo $data_laporan['jawaban_3']; ?></td>
+                                    <td><?php echo $data_laporan['jawaban_4']; ?></td>
+                                    <td><?php echo $data_laporan['Nilai']; ?></td>
+                                    <td><?php echo $data_laporan['tgl_terima']; ?></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <br>
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th rowspan="2"></th>
+                                <th colspan="14" style="text-align:center">Dimensi Sumber Daya</th>
+                            </tr>
+                            <tr>
+                                <?php for($n = 1; $n <= 14; $n++){ ?>
+                                    <th>pernyataan <?php echo $n ?> </th> <?php } ?>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <?php for($i = 1;$i<=2;$i++) { ?>
+                                <tr>
+                                    <?php if($i == 1) { ?> 
+                                    <td><b>Level Kematangan</b></td>
+                                    <?php for($n = 1; $n <= 14; $n++){ ?>
+                                    <td><?php echo $data_dimensi_1['jawaban_1_'.$n]; ?></td> 
+                                    <?php }} if($i == 2) { ?>
+                                    <td><b>PDF</b></td>
+                                    <?php for($n = 1; $n <= 14; $n++){ ?>
+                                    <td><?php echo $data_dimensi_1['pdf_1_'.$n]; ?></td>
+                                    <?php }} ?>
+                                </tr>
+                                <?php } ?>
+                            </tbody>
+                        </table>
+                        <br>
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th rowspan="2"></th>
+                                <th colspan="10" style="text-align:center">Dimensi Pengungkit</th>
+                            </tr>
+                            <tr>
+                                <?php for($n = 1; $n <= 10; $n++){ ?>
+                                    <th>pernyataan <?php echo $n ?> </th> <?php } ?>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <?php for($i = 1;$i<=2;$i++) { ?>
+                                <tr>
+                                    <?php if($i == 1) { ?> 
+                                    <td><b>Level Kematangan</b></td>
+                                    <?php for($n = 1; $n <= 10; $n++){ ?>
+                                    <td><?php echo $data_dimensi_2['jawaban_2_'.$n]; ?></td> 
+                                    <?php }} if($i == 2) { ?>
+                                    <td><b>PDF</b></td>
+                                    <?php for($n = 1; $n <= 10; $n++){ ?>
+                                    <td><?php echo $data_dimensi_2['pdf_2_'.$n]; ?></td>
+                                    <?php }} ?>
+                                </tr>
+                                <?php } ?>
+                            </tbody>
+                        </table>
+                        <br>
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th rowspan="2"></th>
+                                <th colspan="6" style="text-align:center">Dimensi Nilai</th>
+                            </tr>
+                            <tr>
+                                <?php for($n = 1; $n <= 6; $n++){ ?>
+                                    <th>pernyataan <?php echo $n ?> </th> <?php } ?>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <?php for($i = 1;$i<=2;$i++) { ?>
+                                <tr>
+                                    <?php if($i == 1) { ?> 
+                                    <td><b>Level Kematangan</b></td>
+                                    <?php for($n = 1; $n <= 6; $n++){ ?>
+                                    <td><?php echo $data_dimensi_3['jawaban_3_'.$n]; ?></td> 
+                                    <?php }} if($i == 2) { ?>
+                                    <td><b>PDF</b></td>
+                                    <?php for($n = 1; $n <= 6; $n++){ ?>
+                                    <td><?php echo $data_dimensi_3['pdf_3_'.$n]; ?></td>
+                                    <?php }} ?>
+                                </tr>
+                                <?php } ?>
+                            </tbody>
+                        </table>
+                        <br>
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th rowspan="2"></th>
+                                <th colspan="5" style="text-align:center">Dimensi Dampak</th>
+                            </tr>
+                            <tr>
+                                <?php for($n = 1; $n <= 5; $n++){ ?>
+                                    <th>pernyataan <?php echo $n ?> </th> <?php } ?>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <?php for($i = 1;$i<=2;$i++) { ?>
+                                <tr>
+                                    <?php if($i == 1) { ?> 
+                                    <td><b>Level Kematangan</b></td>
+                                    <?php for($n = 1; $n <= 5; $n++){ ?>
+                                    <td><?php echo $data_dimensi_4['jawaban_4_'.$n]; ?></td> 
+                                    <?php }} if($i == 2) { ?>
+                                    <td><b>PDF</b></td>
+                                    <?php for($n = 1; $n <= 5; $n++){ ?>
+                                    <td><?php echo $data_dimensi_4['pdf_4_'.$n]; ?></td>
+                                    <?php }} ?>
+                                </tr>
+                                <?php } ?>
+                            </tbody>
+                        </table>
                     <button class="btn btn-warning" onclick="history.back()"> KEMBALI</button>
                 </div>
             </div>
