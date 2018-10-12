@@ -30,13 +30,19 @@
         return $string ? implode(', ', $string) . ' ago' : 'just now';
     }
 ?>
+<style>
+a.disabled {
+   pointer-events: none;
+   cursor: default;
+}
+</style>
 <div class="page-header" style="margin-left:45px">
-    <h2>Feedback</h2>
+    <h2>Laporan</h2>
 </div>
 <div class="col-sm-12 col-md-12">
         <div class="panel panel-default">
             <div class="panel-heading">
-                List Feedback
+                List Laporan
                 <a href="#widget1" data-toggle="collapse"><span class="fa fa-chevron-down" style="float: right"></span>
                 </a>
             </div>
@@ -47,11 +53,13 @@
                         <th width="4%">NO</th>
                         <th width="10%">TANGGAL TERIMA</th>
                         <th width="10%">WILAYAH</th>
-                        <th width="36%">NILAI</th>
+                        <th width="16%">NILAI</th>
                         <th width="10%">SUMBER DAYA</th>
                         <th width="10%">PENGUNGKIT</th>
                         <th width="10%">NILAI</th>
                         <th width="10%">DAMPAK</th>
+                        <th width="10%">BERI KOMENTAR</th>
+                        <th width="10%">LIHAT DETAIL</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -166,6 +174,17 @@
                                             </div>
                                         </div>
                                     </div>
+                            </td>
+                            <td class="text-center">
+                            <?php if ($data['aktif'] == 1){?>
+                                    <a href="<?php echo base_url()?>dtlp/kirim_email/<?php echo $data['id'];?>" data-toggle="tooltip" data-placement ="top" title="Komentar" target="_blank"><span class="fa fa-commenting-o" style="font-size: 14pt;"> </span></a> 
+                            <?php } ?>
+                            <?php if ($data['aktif'] == 0){?>
+                                    <h6 style="color:#BDBDBD;"><i>Disabled</i></h6>
+                            <?php } ?>
+                            </td>
+                            <td class="text-center">
+                                <a href="<?php echo base_url()?>dtlp/detail_data/<?php echo $data['id'];?>" data-toggle="tooltip" data-placement ="top" title="detail"><span class="glyphicon glyphicon-check" style="font-size: 14pt"></span></a>
                             </td>
                         </tr>
                     <?php }?>

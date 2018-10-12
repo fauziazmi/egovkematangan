@@ -2,13 +2,17 @@
 <head>
     <?php $this->load->view('template/header');?>
     <script type="text/javascript"> 
-    		$('#job').on('change', function(){
-    if($(this).val() =='Assessor'){
-        $('#region').attr('disabled', 'disabled');
-    }else{
-        $('#region').attr('disabled', false);
-    }
-});
+        var update_job = function(){ 
+                if($('#job').is(':selected')){
+                    //alert('this option is selected');
+                    $('#region').prop('disabled', 'disabled');
+                }else{
+                    //alert('this is not');
+                    $('#region').prop('disabled', false );
+                }
+            };
+            $(update_job);
+            $('job').change(update_job);
 </script>
 </head>
 <body>
@@ -67,7 +71,7 @@
                                 <a href="" data-toggle="modal" data-target="#lupa">Lupa Password</a>
                             </div>
                             <div class="pull-right">
-                                <a href="#" data-toggle="modal" data-target="#register">Daftar</a>
+                                <a href="" data-toggle="modal" data-target="#register">Daftar</a>
                             </div>
                         </div>
                     </div>
@@ -84,7 +88,7 @@
                 <h4 class="modal-title">Registrasi</h4>
             </div>
             <form action="<?php echo site_url('login/daftar_data')?>" enctype="multipart/form-data" method="post">
-                <div class="modal-body">
+                <div class="modal-body">      
                     <div class="form-group">
                             <label>Tugas Anda</label>
                             <select id='job' name="pekerjaan" class="form-control">
@@ -93,7 +97,7 @@
                             </select>
                     </div>
                     <div class="form-group">
-                        <label>Wilayah</label>
+                        <h6><b>Wilayah </b><i>*Jika anda assessor, abaikan pilihan wilayah</i></h6>
                         <select id='region' name="wilayah" class="form-control">
                                 <option value="Aceh">Aceh</option>
                                 <option value="Bali">Bali</option>
