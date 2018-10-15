@@ -135,7 +135,7 @@
                                                 <?php for($i=0; $i<=4; $i++) {?>
                                                 <tr>
                                                     <th><h6>level <?php echo $i ?></h6></th>
-                                                    <th><h6><?php echo $data['level_'.$i]; ?></h6></th>
+                                                    <th><h6 style="text-align: justify;line-height: 1.5;"><?php echo $data['level_'.$i]; ?></h6></th>
                                                 </tr>
                                                 <?php }?>
                                             </table>
@@ -207,7 +207,7 @@
                                                 <?php for($i=0; $i<=4; $i++) {?>
                                                 <tr>
                                                     <th><h6>level <?php echo $i ?></h6></th>
-                                                    <th><h6><?php echo $data['level_'.$i]; ?></h6></th>
+                                                    <th><h6 style="text-align: justify;line-height: 1.5;"><?php echo $data['level_'.$i]; ?></h6></th>
                                                 </tr>
                                                 <?php }?>
                                             </table>
@@ -280,7 +280,7 @@
                                                 <?php for($i=0; $i<=4; $i++) {?>
                                                 <tr>
                                                     <th><h6>level <?php echo $i ?></h6></th>
-                                                    <th><h6><?php echo $data['level_'.$i]; ?></h6></th>
+                                                    <th><h6 style="text-align: justify;line-height: 1.5;"><?php echo $data['level_'.$i]; ?></h6></th>
                                                 </tr>
                                                 <?php }?>
                                             </table>
@@ -353,7 +353,7 @@
                                                 <?php for($i=0; $i<=4; $i++) {?>
                                                 <tr>
                                                     <th><h6>level <?php echo $i ?></h6></th>
-                                                    <th><h6><?php echo $data['level_'.$i]; ?></h6></th>
+                                                    <th><h6 style="text-align: justify;line-height: 1.5;"><?php echo $data['level_'.$i]; ?></h6></th>
                                                 </tr>
                                                 <?php }?>
                                             </table>

@@ -82,7 +82,7 @@
                     <?php   $no = 0; foreach ($data_pertanyaan_2 as $data){ $no++ ?>  
                         <tr>
                             <td><?php echo $no;?></td>
-                            <td><?php echo $data['variabel'];?></td>
+                            <td><?php echo $data['pertanyaan'];?></td>
                             <td><?php if ($data_dimensi2['jawaban_2_'.$no] != null ){ echo $data_dimensi2['jawaban_2_'.$no]; } else {echo '-';}?></td>
                             <td><textarea class="form-control" name="feedback_2_<?php echo $no ?>"></textarea></td>
                             <td><a href="<?php echo base_url('assets/pdf/'.$wilayah.'/'.$data_dimensi2['pdf_2_'.$no])?>" data-toggle="tooltip" data-placement ="top" title="lihat pdf" target="_blank"><span class="fa fa-file-pdf-o" style="font-size: 18pt;"> </span></a></td>                          
