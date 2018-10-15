@@ -29,7 +29,7 @@ function drawBasic() {
         vAxis: {
           title: 'Nilai dimensi sumber daya e-gov Maturity',
           minValue: 0,
-          maxValue: 5,
+          maxValue: 3,
         }
       };
 
@@ -60,7 +60,7 @@ function drawBasic2() {
         vAxis: {
           title: 'Nilai dimensi pengungkit e-gov Maturity',
           minValue: 0,
-          maxValue: 5,
+          maxValue: 3,
         }
       };
 
@@ -92,7 +92,7 @@ function drawBasic3() {
         vAxis: {
           title: 'Nilai dimensi nilai e-gov Maturity',
           minValue: 0,
-          maxValue: 5,
+          maxValue: 3,
         }
       };
 
@@ -123,7 +123,7 @@ function drawBasic4() {
         vAxis: {
           title: 'Nilai dimensi dampak e-gov Maturity',
           minValue: 0,
-          maxValue: 5,
+          maxValue: 3,
         }
       };
 
@@ -155,7 +155,7 @@ function drawBasic5() {
         vAxis: {
           title: 'Rata-rata 4 dimensi e-gov Maturity',
           minValue: 0,
-          maxValue: 5,
+          maxValue: 3,
         }
       };
 
@@ -305,11 +305,11 @@ function drawBasic5() {
                         </ul>
                         <!-- Tab panes, ini content dari tab di atas -->
                         <div class="tab-content">
-                        <div class="tab-pane active" id="sumber_daya"><h6 align="center"><b>Nilai dimensi sumber daya e-gov Maturity</b></h6><div id="chart_sumber_daya" style="width:100%; height: 500px;"></div><h6 align="center"><i>Provinsi</i></h6><h6 style="margin-left:200px"><i>* Skala nilai 0-4</i></h6></div><!-- Untuk Tab pertama berikan div class=”active” agar pertama kali halaman di load content langsung active-->
-                        <div class="tab-pane" id="pengungkit"><h6 align="center"><b>Nilai dimensi pengungkit e-gov Maturity</b></h6><div id="chart_pengungkit" style="width:100%; height: 500px;"></div><h6 align="center"><i>Provinsi</i></h6><h6 style="margin-left:200px"><i>* Skala nilai 0-4</i></h6></div>
-                        <div class="tab-pane" id="nilai"><h6 align="center"><b>Nilai dimensi Nilai e-gov Maturity</b></h6><div id="chart_nilai" style="height: 500px;margin-top: 0px;"></div><h6 align="center"><i>Provinsi</i></h6><h6 style="margin-left:200px"><i>* Skala nilai 0-4</i></h6></div>
-                        <div class="tab-pane" id="dampak"><h6 align="center"><b>Nilai dimensi Dampak e-gov Maturity</b></h6><div id="chart_dampak" style="height: 500px;margin-top: 0px;"></div><h6 align="center"><i>Provinsi</i></h6><h6 style="margin-left:200px"><i>* Skala nilai 0-4</i></h6></div>
-                        <div class="tab-pane" id="rata"><h6 align="center"><b>Rata-rata nilai 4 dimensi e-gov Maturity</b></h6><div id="chart_rata" style="height: 500px;margin-top: 0px;"></div><h6 align="center"><i>Provinsi</i></h6><h6 style="margin-left:200px"><i>* Skala nilai 0-4</i></h6></div>
+                        <div class="tab-pane active" id="sumber_daya" ><h6 align="center"><b>Nilai dimensi sumber daya e-gov Maturity</b></h6><div id="chart_sumber_daya" style="width:100%; height: 500px;" align="center"></div><h6 align="center"><i>Provinsi</i></h6><h6 style="margin-left:300px"><i>* Skala nilai 0-4</i></h6></div><!-- Untuk Tab pertama berikan div class=”active” agar pertama kali halaman di load content langsung active-->
+                        <div class="tab-pane" id="pengungkit"><h6 align="center"><b>Nilai dimensi pengungkit e-gov Maturity</b></h6><div id="chart_pengungkit" style="width:100%; height: 500px;" align="center"></div><h6 align="center"><i>Provinsi</i></h6><h6 style="margin-left:300px"><i>* Skala nilai 0-4</i></h6></div>
+                        <div class="tab-pane" id="nilai"><h6 align="center"><b>Nilai dimensi Nilai e-gov Maturity</b></h6><div id="chart_nilai" style="height: 500px;margin-top: 0px;"  align="center"></div><h6 align="center"><i>Provinsi</i></h6><h6 style="margin-left:300px"><i>* Skala nilai 0-4</i></h6></div>
+                        <div class="tab-pane" id="dampak"><h6 align="center"><b>Nilai dimensi Dampak e-gov Maturity</b></h6><div id="chart_dampak" style="height: 500px;margin-top: 0px;"  align="center"></div><h6 align="center"><i>Provinsi</i></h6><h6 style="margin-left:300px"><i>* Skala nilai 0-4</i></h6></div>
+                        <div class="tab-pane" id="rata"><h6 align="center"><b>Rata-rata nilai 4 dimensi e-gov Maturity</b></h6><div id="chart_rata" style="height: 500px;margin-top: 0px;"  align="center"></div><h6 align="center"><i>Provinsi</i></h6><h6 style="margin-left:300px"><i>* Skala nilai 0-4</i></h6></div>
 </div>       
                 </div>
             </div>

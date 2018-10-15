@@ -56,7 +56,7 @@ header("Expires: 0");
             <?php for($n = 1; $n <= 14; $n++){ ?>
             <td><?php echo $data_dimensi_1['jawaban_1_'.$n]; ?></td> 
             <?php }} if($i == 2) { ?>
-            <td><b>PDF</b></td>
+            <td><b>File Bukti</b></td>
             <?php for($n = 1; $n <= 14; $n++){ ?>
             <td><?php echo $data_dimensi_1['pdf_1_'.$n]; ?></td>
             <?php }} ?>
@@ -84,7 +84,7 @@ header("Expires: 0");
             <?php for($n = 1; $n <= 10; $n++){ ?>
             <td><?php echo $data_dimensi_2['jawaban_2_'.$n]; ?></td> 
             <?php }} if($i == 2) { ?>
-            <td>PDF</td>
+            <td><b>File Bukti</b></td>
             <?php for($n = 1; $n <= 10; $n++){ ?>
             <td><?php echo $data_dimensi_2['pdf_2_'.$n]; ?></td>
             <?php }} ?>
@@ -112,7 +112,7 @@ header("Expires: 0");
             <?php for($n = 1; $n <= 6; $n++){ ?>
             <td><?php echo $data_dimensi_3['jawaban_3_'.$n]; ?></td> 
             <?php }} if($i == 2) { ?>
-            <td><b>PDF</b></td>
+            <td><b>File Bukti</b></td>
             <?php for($n = 1; $n <= 6; $n++){ ?>
             <td><?php echo $data_dimensi_3['pdf_3_'.$n]; ?></td>
             <?php }} ?>
@@ -140,7 +140,7 @@ header("Expires: 0");
             <?php for($n = 1; $n <= 5; $n++){ ?>
             <td><?php echo $data_dimensi_4['jawaban_4_'.$n]; ?></td> 
             <?php }} if($i == 2) { ?>
-            <td><b>PDF</b></td>
+            <td><b>File Bukti</b></td>
             <?php for($n = 1; $n <= 5; $n++){ ?>
             <td><?php echo $data_dimensi_4['pdf_4_'.$n]; ?></td>
             <?php }} ?>
