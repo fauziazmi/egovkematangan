@@ -175,6 +175,16 @@ function drawBasic5() {
                 <a href="#widget1" data-toggle="collapse"><span class="fa fa-chevron-down" style="float: right"></span>
                 </a>
             </div>
+            <?php
+                $data1=$this->session->flashdata('sukses');
+                if($data1!=""){ ?>
+                    <div id="pesan-error-flash">
+                        <div class='alert alert-success alert-dismissable'>
+                            <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
+                            <center><strong> Succes! </strong> <?=$data1;?></center>
+                        </div>
+                    </div>
+                <?php } ?>
             <div id="widget1" class="panel-body collapse in">
                 <table id="table" class="table penelitian table-bordered table-striped" width="100%">
                     <thead>

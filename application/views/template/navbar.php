@@ -45,11 +45,7 @@ $ses_level = $this->session->userdata('ses_pekerjaan');
                     <a href="<?php echo site_url('dtlp');?>" class="w3-bar-item w3-button"> Input Form</a>
                 </li>
                 <?php } ?>
-                <?php if ($ses_level == 'Pemda'){?>
-                <li>
-                    <a href="<?php echo site_url('user');?>" class="w3-bar-item w3-button"> Verifikasi</a>
-                </li>
-                <?php } ?>
+                
                 <?php if ($ses_level == ('Pemda' || 'Admin')){?>
                     <div class="w3-dropdown-hover">
                     <li>

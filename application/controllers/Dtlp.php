@@ -476,7 +476,7 @@ class Dtlp extends CI_Controller{
                 'aktif' => 0
             );
             $this->model->Update('laporan', $data_aktif, array('wilayah' => $wilayah));
-            $this->session->set_flashdata('sukses', 'Simpan data berhasil dilakukan');
+            $this->session->set_flashdata('sukses', "Feedback telah dikirim ke Pemda $wilayah");
             redirect('years');
         //}
     }

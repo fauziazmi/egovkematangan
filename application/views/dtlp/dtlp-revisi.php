@@ -158,13 +158,14 @@
 	<label style="margin-right: 7%; margin-left: 7%;">Review</label>
 	<div class="form-group" style="margin-right: 7%; margin-left: 7%;">
 		<div class="form-line">
-			<textarea class="form-control" name="komentar_overall" id="ckeditor"></textarea>
+			<textarea class="form-control" name="komentar_overall" id="ckeditor" required></textarea>
 		</div>
 	</div>
             <input type="hidden" name="username_assessor" value="<?php echo $ses_username?>">
             <input type="hidden" name="wilayah" value="<?php echo $wilayah?>">
             <input type="hidden" name="tgl_terima" value="<?php echo date("Y-m-d")?>">
 	<div class="form-group" align="center">
-		<button type="submit" class="btn btn-primary" style="margin-left: 7%;" >Kirim</button>
+        <button type="reset" class="btn btn-danger">Reset</button>
+        <button type="submit" class="btn btn-primary" >Kirim</button>
 	</div>
 </form>
