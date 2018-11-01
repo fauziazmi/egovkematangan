@@ -133,6 +133,7 @@
                                 <option value="Sumatera Selatan">Sumatera Selatan</option>
                                 <option value="Sumatera Utara">Sumatera Utara</option>
                                 <option value="Yogyakarta">Yogyakarta</option>
+                                <option value="Kementerian PUPR">Kementerian PUPR</option>
                         </select>
                     </div>
                     <div class="form-group">

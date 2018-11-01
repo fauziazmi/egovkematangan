@@ -350,7 +350,7 @@ class Dtlp extends CI_Controller{
     public function export_excel($id = 1){
         $this->cek_pengunjung();
         $data = array(
-            'title' => 'Data Laporan Pemda',
+            'title' => 'Data Laporan',
             'data_laporan' => $this->model->GetDtlp("where id = '$id'")->row_array(),
             'data_dimensi_1' => $this->model->GetDimensi1("where id_laporan = '$id'")->row_array(),
             'data_dimensi_2' => $this->model->GetDimensi2("where id_laporan = '$id'")->row_array(),
@@ -496,7 +496,7 @@ class Dtlp extends CI_Controller{
         $data_laporan = $this->model->GetDtlp("where id = '$id'")->row_array();
         ob_start();
         $data = array(
-            'title' => 'Data Laporan Pemda '.$data_laporan['wilayah'].'',
+            'title' => 'Data Laporan '.$data_laporan['wilayah'].'',
             'data_laporan' => $data_laporan,
         );
         $this->load->view('dtlp/dtlp-report-pdf', $data);
@@ -505,7 +505,7 @@ class Dtlp extends CI_Controller{
         require_once ('./assets/html2pdf/html2pdf.class.php');
         $pdf = new HTML2PDF('P','A4','en');
         $pdf->WriteHTML($html);
-        $pdf->Output('Data Laporan Pemda '.$data_laporan['wilayah'].'.pdf','D');
+        $pdf->Output('Data Laporan '.$data_laporan['wilayah'].'.pdf','D');
     }
 
     public function export_print(){
