@@ -70,12 +70,18 @@ class Login extends CI_Controller {
         $username = $this->input->post('username');
         $wilayah = $this->input->post('wilayah');
         $pekerjaan = $this->input->post('pekerjaan');
+        //$cek_wilayah = $this->model->GetUser("where wilayah = '$wilayah'")->num_rows();
         $cek_username = $this->model->GetUser("where username = '$username'")->num_rows();
         if($pekerjaan == 'Assessor') $wilayah = $username;
         if ($cek_username > 0){
             $this->session->set_flashdata('warning','Username sudah ada');
             redirect('login');
-        }else{
+        }
+        /*if ($cek_wilayah > 0){
+            $this->session->set_flashdata('warning',"wilayah $wilayah sudah memiliki akun");
+            redirect('login');
+        }*/
+        else{
             $config = array(
                 'upload_path' => './assets/upload/foto-user',
                 'allowed_types' => 'gif|jpg|JPG|png|JPEG|pdf|doc',
